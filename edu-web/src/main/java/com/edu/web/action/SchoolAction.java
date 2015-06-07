@@ -41,6 +41,9 @@ public class SchoolAction {
     public String home(Model model, Integer id){
 
         School school = (School) schoolService.selectByPrimaryKey(id);
+        if(school == null){
+            return "error/404";
+        }
 //        List<Major> majorList= majorService.listBySchool(id);
         List<Picture> zszsList = pictureService.listByTypeAndSchool(Constant.PictureCategory.ZSZS, id);
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
@@ -71,7 +74,9 @@ public class SchoolAction {
     public String majorInfo(Model model, Integer id){
 
         Major major= (Major) majorService.selectByPrimaryKey(id);
-
+        if(major == null){
+            return "error/404";
+        }
         model.addAttribute("major", major);
         return "";
     }
@@ -87,10 +92,19 @@ public class SchoolAction {
 
     @RequestMapping("/scenery")
     public String sceneryList(Model model, Integer id){
-
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
         model.addAttribute("xyfgList", xyfgList);
+        return "";
+    }
+
+    @RequestMapping("/newsInfo")
+    public String newsInfo(Model model, Integer id){
+        Newsdetail newsdetail= newsdetailService.updateAndView(id);
+        if(newsdetail == null){
+            return "error/404";
+        }
+        model.addAttribute("newsdetail", newsdetail);
         return "";
     }
 }
