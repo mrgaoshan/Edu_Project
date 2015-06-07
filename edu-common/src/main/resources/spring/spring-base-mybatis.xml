@@ -1,0 +1,80 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+            http://www.springframework.org/schema/task
+            http://www.springframework.org/schema/task/spring-task-3.0.xsd
+            http://cxf.apache.org/jaxws
+            http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<bean id="memDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/edu?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="user" value="root" />
+        <property name="password" value="root" />
+        <property name="maxPoolSize" value="40" />
+        <property name="minPoolSize" value="2" />
+        <property name="initialPoolSize" value="1" />
+        <property name="maxIdleTime" value="30" />
+    </bean>
+
+ 
+    <bean id="memSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="memDataSource" />
+        </property>
+        <!-- MyBatis 的 XML 配置文件路径 -->
+        <property name="configLocation" value="classpath:sqlMapConfig.xml" />
+        <!-- 扫描自动生成的xml文件 --><!-- Mybatis XML映射文件 -->
+        <property name="mapperLocations">
+            <list>
+                <!-- 扫描自己写的xml文件 -->
+                <value>classpath*:com/edu/*/mapper/**/*.xml</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="memSqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="memSessionFactory"></constructor-arg>
+    </bean>
+    <!-- 扫描mybatisGenerator 自动生成的 所有接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.edu.*.mapper"></property>
+    </bean>
+    <!-- 数据库事务策略 -->
+    <bean id="memTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="memDataSource"></property>
+    </bean>
+
+    <!-- 事务拦截器 -->
+    <tx:advice id="txAdvice" transaction-manager="memTransactionManager">
+        <tx:attributes>
+            <tx:method name="find*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="get*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="view*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="query*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="select*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="add*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="change*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="recover*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="modify*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <!-- 添加事务拦截器 -->
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="pointcut" expression="execution(* com.edu..service..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
+    </aop:config>
+  
+</beans>
