@@ -1,17 +1,9 @@
 package com.edu.web.action;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.edu.model.bean.NavList;
-import com.edu.model.bean.Pager;
-import com.edu.model.service.NavListService;
 
 @Controller
-public class PageNationTestActioin {
+public class PageNationTestActioin {/*
 	@Autowired
 	private NavListService navListService;
 	
@@ -37,4 +29,4 @@ public class PageNationTestActioin {
 		
         return pager.getJsonData().toString();
     }
-}
+*/}
