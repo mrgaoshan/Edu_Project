@@ -234,14 +234,12 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   
-  <select id="findByShooclAndCate" resultMap="ResultMapWithBLOBs" parameterType="map" >
+  <select id="findBySchoolAndCate" resultMap="BaseResultMap" parameterType="map" >
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from newsdetail
     where schoolId = #{schoolId,jdbcType=INTEGER}
-    
     and cate = #{cate,jdbcType=VARCHAR}
   </select>
+
 </mapper>

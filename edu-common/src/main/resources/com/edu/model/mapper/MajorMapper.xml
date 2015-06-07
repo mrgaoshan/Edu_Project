@@ -118,4 +118,11 @@
       readtimes = #{readtimes,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="listBySchool" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from major
+    where schoolId = #{schoolId,jdbcType=INTEGER}
+  </select>
 </mapper>

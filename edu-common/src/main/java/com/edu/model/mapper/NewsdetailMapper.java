@@ -8,5 +8,6 @@ import com.edu.model.bean.Newsdetail;
 
 public interface NewsdetailMapper extends BaseAppMapper {
 
-	List<Newsdetail>  findByShooclAndCate(Map map);
+	List<Newsdetail> findBySchoolAndCate(Map map);
+
 }

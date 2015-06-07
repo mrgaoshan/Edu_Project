@@ -90,4 +90,14 @@
       type = #{type,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <select id="listByTypeAndSchool" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select
+    <include refid="Base_Column_List" />
+    from picture
+    where schoolId = #{schoolId,jdbcType=INTEGER}
+    and
+    type = #{type,jdbcType=String}
+  </select>
 </mapper>
