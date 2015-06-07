@@ -22,7 +22,7 @@ public class NewdetailTest extends AbstractServiceForTesting{
     @Test
     public void test(){
     	
-    	Newsdetail out = 	newsdetailService.findByShooclAndCate(1, Constant.NewsCategory.GKXX);
+    	Newsdetail out = 	newsdetailService.findBySchoolAndCate(1, Constant.NewsCategory.GKXX);
     	
     	System.out.println(out.getContent());
     	

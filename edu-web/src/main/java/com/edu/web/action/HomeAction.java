@@ -45,6 +45,7 @@ public class HomeAction {
 	public String viewNews(Model model, Integer id) {
 
 		newsdetailService.updateAndView(id);
+		
 		return "viewNews";
 
 	}
