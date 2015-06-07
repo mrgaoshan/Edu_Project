@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edu.model.mapper.MajorMapper" >
+  <resultMap id="BaseResultMap" type="com.edu.model.bean.Major" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="schoolId" property="schoolid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="leadimage" property="leadimage" jdbcType="VARCHAR" />
+    <result column="readtimes" property="readtimes" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.edu.model.bean.Major" extends="BaseResultMap" >
+    <result column="description" property="description" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, schoolId, name, leadimage, readtimes
+  </sql>
+  <sql id="Blob_Column_List" >
+    description
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from major
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from major
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.edu.model.bean.Major" >
+    insert into major (id, schoolId, name, 
+      leadimage, readtimes, description
+      )
+    values (#{id,jdbcType=INTEGER}, #{schoolid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{leadimage,jdbcType=VARCHAR}, #{readtimes,jdbcType=INTEGER}, #{description,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.edu.model.bean.Major" >
+    insert into major
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="schoolid != null" >
+        schoolId,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="leadimage != null" >
+        leadimage,
+      </if>
+      <if test="readtimes != null" >
+        readtimes,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="schoolid != null" >
+        #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="leadimage != null" >
+        #{leadimage,jdbcType=VARCHAR},
+      </if>
+      <if test="readtimes != null" >
+        #{readtimes,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.edu.model.bean.Major" >
+    update major
+    <set >
+      <if test="schoolid != null" >
+        schoolId = #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="leadimage != null" >
+        leadimage = #{leadimage,jdbcType=VARCHAR},
+      </if>
+      <if test="readtimes != null" >
+        readtimes = #{readtimes,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.edu.model.bean.Major" >
+    update major
+    set schoolId = #{schoolid,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      leadimage = #{leadimage,jdbcType=VARCHAR},
+      readtimes = #{readtimes,jdbcType=INTEGER},
+      description = #{description,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.edu.model.bean.Major" >
+    update major
+    set schoolId = #{schoolid,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      leadimage = #{leadimage,jdbcType=VARCHAR},
+      readtimes = #{readtimes,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

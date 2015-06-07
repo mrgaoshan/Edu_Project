@@ -1,25 +1,15 @@
 package com.edu.serviceTest;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import net.sf.json.JSONArray;
-
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.edu.model.bean.NavList;
-import com.edu.model.bean.Pager;
-import com.edu.model.service.NavListService;
 
 public class PageNationTest extends AbstractServiceForTesting{
 	 
 
-	@Autowired
-	private NavListService navListService;
+	/*@Autowired
+	private NavListService navListService;*/
 	
 	@Test
-	public void testPageNation(){
+	public void testPageNation(){/*
 		
 		Pager pager  = new Pager<NavList>();
 		
@@ -34,9 +24,9 @@ public class PageNationTest extends AbstractServiceForTesting{
 		for(NavList item:list){
 			System.out.println("nave name"+ item.getNavname());
 		}
-	}
+	*/}
 	
-	public static void main(String dd[]){
+	public static void main(String dd[]){/*
 		
 		List<NavList> list = new ArrayList<NavList>();
 		NavList a1 = new NavList();
@@ -48,7 +38,7 @@ public class PageNationTest extends AbstractServiceForTesting{
 		JSONArray jsonArray = JSONArray.fromObject(list);
 		
 		System.out.println(jsonArray.toString());
-	}
+	*/}
 	
 	
 	

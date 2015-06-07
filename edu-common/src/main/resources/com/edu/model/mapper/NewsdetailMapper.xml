@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edu.model.mapper.NewsdetailMapper" >
+  <resultMap id="BaseResultMap" type="com.edu.model.bean.Newsdetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="schoolId" property="schoolid" jdbcType="INTEGER" />
+    <result column="cate" property="cate" jdbcType="VARCHAR" />
+    <result column="cateid" property="cateid" jdbcType="INTEGER" />
+    <result column="navid" property="navid" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="leadimage" property="leadimage" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="modifytime" property="modifytime" jdbcType="TIMESTAMP" />
+    <result column="editor" property="editor" jdbcType="VARCHAR" />
+    <result column="releaseflag" property="releaseflag" jdbcType="TINYINT" />
+    <result column="readtimes" property="readtimes" jdbcType="INTEGER" />
+    <result column="ordernum" property="ordernum" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.edu.model.bean.Newsdetail" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, schoolId, cate, cateid, navid, title, memo, leadimage, createtime, modifytime, 
+    editor, releaseflag, readtimes, ordernum
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from newsdetail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from newsdetail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.edu.model.bean.Newsdetail" >
+    insert into newsdetail (id, schoolId, cate, 
+      cateid, navid, title, 
+      memo, leadimage, createtime, 
+      modifytime, editor, releaseflag, 
+      readtimes, ordernum, content
+      )
+    values (#{id,jdbcType=INTEGER}, #{schoolid,jdbcType=INTEGER}, #{cate,jdbcType=VARCHAR}, 
+      #{cateid,jdbcType=INTEGER}, #{navid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{leadimage,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{modifytime,jdbcType=TIMESTAMP}, #{editor,jdbcType=VARCHAR}, #{releaseflag,jdbcType=TINYINT}, 
+      #{readtimes,jdbcType=INTEGER}, #{ordernum,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.edu.model.bean.Newsdetail" >
+    insert into newsdetail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="schoolid != null" >
+        schoolId,
+      </if>
+      <if test="cate != null" >
+        cate,
+      </if>
+      <if test="cateid != null" >
+        cateid,
+      </if>
+      <if test="navid != null" >
+        navid,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="leadimage != null" >
+        leadimage,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="modifytime != null" >
+        modifytime,
+      </if>
+      <if test="editor != null" >
+        editor,
+      </if>
+      <if test="releaseflag != null" >
+        releaseflag,
+      </if>
+      <if test="readtimes != null" >
+        readtimes,
+      </if>
+      <if test="ordernum != null" >
+        ordernum,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="schoolid != null" >
+        #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="cate != null" >
+        #{cate,jdbcType=VARCHAR},
+      </if>
+      <if test="cateid != null" >
+        #{cateid,jdbcType=INTEGER},
+      </if>
+      <if test="navid != null" >
+        #{navid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="leadimage != null" >
+        #{leadimage,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifytime != null" >
+        #{modifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editor != null" >
+        #{editor,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseflag != null" >
+        #{releaseflag,jdbcType=TINYINT},
+      </if>
+      <if test="readtimes != null" >
+        #{readtimes,jdbcType=INTEGER},
+      </if>
+      <if test="ordernum != null" >
+        #{ordernum,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.edu.model.bean.Newsdetail" >
+    update newsdetail
+    <set >
+      <if test="schoolid != null" >
+        schoolId = #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="cate != null" >
+        cate = #{cate,jdbcType=VARCHAR},
+      </if>
+      <if test="cateid != null" >
+        cateid = #{cateid,jdbcType=INTEGER},
+      </if>
+      <if test="navid != null" >
+        navid = #{navid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="leadimage != null" >
+        leadimage = #{leadimage,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifytime != null" >
+        modifytime = #{modifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editor != null" >
+        editor = #{editor,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseflag != null" >
+        releaseflag = #{releaseflag,jdbcType=TINYINT},
+      </if>
+      <if test="readtimes != null" >
+        readtimes = #{readtimes,jdbcType=INTEGER},
+      </if>
+      <if test="ordernum != null" >
+        ordernum = #{ordernum,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.edu.model.bean.Newsdetail" >
+    update newsdetail
+    set schoolId = #{schoolid,jdbcType=INTEGER},
+      cate = #{cate,jdbcType=VARCHAR},
+      cateid = #{cateid,jdbcType=INTEGER},
+      navid = #{navid,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      leadimage = #{leadimage,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      modifytime = #{modifytime,jdbcType=TIMESTAMP},
+      editor = #{editor,jdbcType=VARCHAR},
+      releaseflag = #{releaseflag,jdbcType=TINYINT},
+      readtimes = #{readtimes,jdbcType=INTEGER},
+      ordernum = #{ordernum,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.edu.model.bean.Newsdetail" >
+    update newsdetail
+    set schoolId = #{schoolid,jdbcType=INTEGER},
+      cate = #{cate,jdbcType=VARCHAR},
+      cateid = #{cateid,jdbcType=INTEGER},
+      navid = #{navid,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      leadimage = #{leadimage,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      modifytime = #{modifytime,jdbcType=TIMESTAMP},
+      editor = #{editor,jdbcType=VARCHAR},
+      releaseflag = #{releaseflag,jdbcType=TINYINT},
+      readtimes = #{readtimes,jdbcType=INTEGER},
+      ordernum = #{ordernum,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

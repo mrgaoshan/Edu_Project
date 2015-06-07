@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edu.model.mapper.RegistrationMapper" >
+  <resultMap id="BaseResultMap" type="com.edu.model.bean.Registration" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="schoolId" property="schoolid" jdbcType="INTEGER" />
+    <result column="majorId" property="majorid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="INTEGER" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="BIGINT" />
+    <result column="qq" property="qq" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, schoolId, majorId, name, gender, phone, qq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from registration
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from registration
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.edu.model.bean.Registration" >
+    insert into registration (id, schoolId, majorId, 
+      name, gender, phone, 
+      qq)
+    values (#{id,jdbcType=INTEGER}, #{schoolid,jdbcType=INTEGER}, #{majorid,jdbcType=INTEGER}, 
+      #{name,jdbcType=INTEGER}, #{gender,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT}, 
+      #{qq,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.edu.model.bean.Registration" >
+    insert into registration
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="schoolid != null" >
+        schoolId,
+      </if>
+      <if test="majorid != null" >
+        majorId,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="schoolid != null" >
+        #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="majorid != null" >
+        #{majorid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.edu.model.bean.Registration" >
+    update registration
+    <set >
+      <if test="schoolid != null" >
+        schoolId = #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="majorid != null" >
+        majorId = #{majorid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.edu.model.bean.Registration" >
+    update registration
+    set schoolId = #{schoolid,jdbcType=INTEGER},
+      majorId = #{majorid,jdbcType=INTEGER},
+      name = #{name,jdbcType=INTEGER},
+      gender = #{gender,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=BIGINT},
+      qq = #{qq,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
