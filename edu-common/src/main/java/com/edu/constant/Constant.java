@@ -20,6 +20,8 @@ public class Constant {
 		public final static String ZKXX="ZKXX";
 		@ConstantDesc(groupName = "NewsCategory", descValue = "分类-高考信息")
 		public final static String GKXX="GKXX";
+		@ConstantDesc(groupName = "NewsCategory", descValue = "分类-学校简介")
+		public final static String XXJJ="XXJJ";
 		
 	}
 
