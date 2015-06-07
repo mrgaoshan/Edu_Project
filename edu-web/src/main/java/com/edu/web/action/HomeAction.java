@@ -19,26 +19,34 @@ import com.edu.model.service.NewsdetailService;
  *
  */
 @Controller
+@RequestMapping(value = "home")
 public class HomeAction {
-	
-    @Autowired
-    private NewsdetailService newsdetailService;
-    
-    @RequestMapping(value="home")
-    public String homePage(Model model){
-    	List<Newsdetail> gkxxList	= newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.GKXX);
-    	List<Newsdetail> zsjjList	= newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.ZSJJ);
-    	List<Newsdetail> xxxxList	= newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.XXXX);
-    	List<Newsdetail> zkxxList	= newsdetailService.findBySchoolAndCate(0,Constant.NewsCategory.ZKXX);
-    	
-    	model.addAttribute("gkxxList", gkxxList);
-    	model.addAttribute("zsjjList", zsjjList);
-    	model.addAttribute("xxxxList", xxxxList);
-    	model.addAttribute("zkxxList", zkxxList);
-    	
-    	return "home";
-    	
-    	
-    }
+
+	@Autowired
+	private NewsdetailService newsdetailService;
+
+	@RequestMapping(value = "home")
+	public String homePage(Model model) {
+		List<Newsdetail> gkxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.GKXX);
+		List<Newsdetail> zsjjList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.ZSJJ);
+		List<Newsdetail> xxxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.XXXX);
+		List<Newsdetail> zkxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.ZKXX);
+
+		model.addAttribute("gkxxList", gkxxList);
+		model.addAttribute("zsjjList", zsjjList);
+		model.addAttribute("xxxxList", xxxxList);
+		model.addAttribute("zkxxList", zkxxList);
+
+		return "home";
+
+	}
+
+	@RequestMapping(value = "viewNews")
+	public String viewNews(Model model, Integer id) {
+
+		newsdetailService.updateAndView(id);
+		return "viewNews";
+
+	}
 
 }
