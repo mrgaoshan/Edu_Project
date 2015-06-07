@@ -233,4 +233,13 @@
       ordernum = #{ordernum,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="findBySchoolAndCate" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+    from newsdetail
+    where schoolId = #{schoolId,jdbcType=INTEGER}
+    and cate = #{cate,jdbcType=VARCHAR}
+  </select>
+
 </mapper>

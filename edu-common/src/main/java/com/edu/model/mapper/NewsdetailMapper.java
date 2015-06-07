@@ -1,7 +1,13 @@
 package com.edu.model.mapper;
 
-import com.edu.base.mapper.BaseAppMapper;
+import java.util.List;
+import java.util.Map;
 
-public interface NewsdetailMapper extends BaseAppMapper{
-    
+import com.edu.base.mapper.BaseAppMapper;
+import com.edu.model.bean.Newsdetail;
+
+public interface NewsdetailMapper extends BaseAppMapper {
+
+	List<Newsdetail> findBySchoolAndCate(Map map);
+
 }
