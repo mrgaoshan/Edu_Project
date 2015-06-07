@@ -98,6 +98,6 @@
     from picture
     where schoolId = #{schoolId,jdbcType=INTEGER}
     and
-    type = #{type,jdbcType=String}
+    type = #{type,jdbcType=VARCHAR}
   </select>
 </mapper>
