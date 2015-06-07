@@ -40,10 +40,5 @@
      <!-- Import modules' spring configurations -->
     <import resource="classpath*:spring/**/*.xml"/>
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="com.edu.interceptor.ContextPathInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
+   
 </beans>
