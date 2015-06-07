@@ -19,13 +19,12 @@ import com.edu.model.service.NewsdetailService;
  *
  */
 @Controller
-@RequestMapping(value = "home")
 public class HomeAction {
 
 	@Autowired
 	private NewsdetailService newsdetailService;
 
-	@RequestMapping(value = "home")
+	@RequestMapping(value = "/home")
 	public String homePage(Model model) {
 		List<Newsdetail> gkxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.GKXX);
 		List<Newsdetail> zsjjList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.ZSJJ);
@@ -44,7 +43,9 @@ public class HomeAction {
 	@RequestMapping(value = "viewNews")
 	public String viewNews(Model model, Integer id) {
 
-		newsdetailService.updateAndView(id);
+		Newsdetail newsdetail =  newsdetailService.updateAndView(id);
+		
+		model.addAttribute("newsdetail", newsdetail);
 		
 		return "viewNews";
 

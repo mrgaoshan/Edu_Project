@@ -27,5 +27,12 @@ public class NewdetailTest extends AbstractServiceForTesting{
     	System.out.println(out.getContent());
     	
     }
+    
+    
+    @Test
+    public void test11(){
+    	
+    	Newsdetail newsdetail =  newsdetailService.updateAndView(id);
+    }
 
 }
