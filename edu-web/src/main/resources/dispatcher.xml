@@ -41,7 +41,7 @@
      <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.edu.interceptor.ContextPathInterceptor"/>
+            <bean class="com.edu.web.filter.ContextPathInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 

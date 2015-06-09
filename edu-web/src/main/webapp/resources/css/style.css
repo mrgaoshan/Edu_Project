@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-family:"Microsoft YaHei","lucida Grande",Verdana; background:url(../images/bodybg.jpg) repeat;}
+.index-header-line{width:100%; background:#f7f7f7; border-bottom:1px solid #d8d8d8; height:28px; line-height:28px;}
+.index-center{width:1000px; margin:0 auto; font-size:12px;}
+.wellcomeword{ float:left; }
+.index-hl-link{ float:right; }
+.index-hl-link a{ color:#333;}
+.index-hl-link a:hover{ color:#e60000; text-decoration:underline; }
+
+.logo-tel{ height:105px;}
+.index-logo{ float:left; margin:20px;}
+.index-tel{ float:right; margin:20px;}
+.index-nav{ background:url(../images/navbg.jpg) repeat-x; height:44px; line-height:44px;}
+.index-nav span{ display:block; width:2px; background:url(../images/navfgbg.jpg); float:left; height:44px;}
+.index-nav a{ float:left; display:block; margin:0px 23px; color:#fff; height:44px; font-size:14px; }
+.index-lb{ width:690px; float:left;}
+.index-lb-form{ height:343px; overflow:hidden;}
+
+.index-form{ float:right; width:290px;}
+.index-slist{ float:right; height:350px; width:290px;}
+.index-line1{ height:350px; margin-top:10px;}
+.index-jz{width:690px; float:left; height:350px;}
+.index-jz p{ border-bottom:1px solid #ddd; height:35px; position:relative; background:#f2f2f2;}
+.index-jz p span{ position:absolute; height:36px; display:block; width:80px; text-align:center; line-height:36px; font-weight:bold; cursor:pointer;}
+.rmzy{ left:81px;}
+.zsjz{ left:-1px;}
+.index-slist{ }
+.index-slist a{ margin:0px 8px 8px 0px; float:left; display:block; width:137px; height:108px;}
+
+.zsjz-c li{ list-style:none; background:url(../images/libg.jpg) left center no-repeat; width:50%; height:25px; float:left;}
+.indexline1-now{
+	 background:#fff; border-bottom:1px #fff solid; border-right:1px solid #ddd; border-left:1px solid #ddd;
+}
+.zsjz-c li a,.index-news-c li a{ margin-left:12px; line-height:25px; color:#333;}
+.index-college-title{ background:url(../images/collegebg.png) 16px 0px no-repeat #eeeeee; height:40px; line-height:40px; border-bottom:1px solid #ddd;}
+.index-college-title span{ margin-left:55px; font-weight:bold; font-size:14px;}
+.index-college{ border:1px solid #ddd; padding:0px; width:49%; margin-bottom:20px; background:#f5f5f5;}
+.index-left{ float:left;}
+.index-right{ float:right;}
+.index-college-box{ margin-top:20px; height:740px;}
+.index-college-img{ float:left; margin-left:20px; margin-top:20px; margin-bottom:20px; width:180px; border:1px solid #ddd}
+.index-college-content{ float:left; margin-left:10px; margin-top:20px; margin-bottom:20px; width:260px; font-size:14px; line-height:20px;}
+.index-college-content p{ margin:2px;}
+.index-news{ height:200px;}
+.index-news .col-lg-4{ padding:0px;}
+.index-news-c{ border-top:2px solid #0065b3; border-left:1px solid #ddd; border-right:1px solid #ddd; border-bottom:1px solid #ddd; margin-right:10px; width:323px; height:200px; overflow:hidden;}
+.index-news-c p,.index-link p{ background:#f2f2f2; line-height:24px; border-bottom:1px solid #ddd; margin:0px;}
+.in1{ margin-left:5px; font-size:14px; color:#333; font-weight:bold;}
+.index-news-c p a{ float:right; margin-right:5px;}
+.index-news-c ul{ margin:0px; padding:0px;}
+.index-news-c li{ list-style:none; background:url(../images/libg.jpg) left center no-repeat; height:25px; margin-left:12px;}
+.index-link{ border-top:2px solid #0065b3; border-left:1px solid #ddd; border-right:1px solid #ddd; border-bottom:1px solid #ddd; margin-top:20px; height:75px; overflow:hidden;}
+.btinfo{ width:100%; height:25px; background:#e3e3e3; text-align:center; line-height:25px; }
+
+
+/*学校css*/
+.college-center{ width:990px; margin:0 auto; height:auto;}
+.college-header-line{ width:100%; height:24px; background:#005d85; line-height:24px;}
+.college-hl-link{ float:right; color:#fff;}
+.college-hl-link a{ color:#fff; line-height:24px; font-size:12px;}
+.college-l-t{ width:100%; border-bottom:1px solid #dcdcdc; height:95px;}
+.college-l-t a{ float:left;}
+.college-l-t p{ float:right; margin:19px -90px 0px 0px; line-height:29px;}
+.c-t-title{ font-size:16px; color:#292929;}
+.c-t-content{ font-size:20px; font-weight:bold; color:#d60505;}
+
+.c-nav{ background:#317b9b; height:25px;}
+.c-nav ul{ margin:0px; padding:0px;}
+.c-nav li{ list-style:none; float:left; margin:5px 0 0 0; padding:0 26px; border-right:1px solid #fff; height:15px; line-height:15px;}
+.c-nav li a{ color:#fff;}
+.c-main-img{ height:250px;}
+.c-index-main{ width:1010px; margin:20px auto 0; height:250px; }
+.c-index-m-c{ border-top:2px solid #0065b3; border-left:1px solid #ddd; border-right:1px solid #ddd; border-bottom:1px solid #ddd;height:250px; overflow:hidden;}
+.c-i-m-c-t{ height:28px; line-height:28px; position:relative; border-bottom:1px solid #ddd; background:#f2f2f2; margin:0;}
+.c-i-m-c-t span{ display:block; position:absolute; left:-1; top:0; border-bottom:#fff; height:28px; line-height:28px; background:#fff; border-right:1px solid #ddd; text-align:center; width:80px; font-weight:bold; }
+.c-i-m-c-c{ padding:10px;}
+.c-index-m-f{ border:1px solid #ddd; height:250px; background:#e3ffce; }
+.c-i-m-f-t{font-weight:bold; font-size:14px; padding-left:10px; line-height:28px; border-bottom:1px solid green; background:#f2f2f2;}
+.zxbm p{ margin:0px 0px 5px 10px; font-size:12px;}
+.zxbm label{ width:60px; display:block; float:left; margin-right:10px;}
+.fdfinput{ width:140px;}
+.submit{ background:#0065b3; border:1px solid #ddd; line-height:25px; padding:0px 20px; border-radius:3px; text-align:center; color:#fff;}
+.c-i-m-c-c ul{ margin:0px; padding:0px; list-style:none;}
+.c-i-m-c-c li { margin:0px; padding:0px; list-style:none; line-height:25px;background:url(../images/libg.jpg) left center no-repeat; height:25px; margin-left:12px;}
+.c-i-m-c-c li a{ margin-left:12px; color:#333; font-size:12px;}
+.c-index-contact div{ margin:0px 0px 5px 10px; height:30px;}
+.c-index-contact label{ width:71px; display:block; float:left; margin-right:10px; }
+.c-index-contact span{ width:160px; display:block; float:left; margin-right:10px; }
+
+.c-index-images{border-top: 2px solid #0065b3; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; height:200px; margin-top:20px;}
+.c-index-images ul{ margin:10px; list-style:none; padding:0px;}
+.c-index-images ul li{ float:left; width:170px; height:150px; margin:0px 10px; cursor:pointer; border:1px solid #ddd; background:#fff; padding:0px; overflow:hidden;}
+.c-index-images ul li p{ background:#848484; color:#fff; line-height:20px; height:20px; text-align:center;}
+.c-link{ background:#f0f0f0; height:85px; margin:20px 0 0 0 ; text-align:center;}
+.c-link a img{ margin:20px;}
+
+.col-lg-4{ padding:0 10px;}
+
+
+.college-page{ height:auto;}
+.cc-left{ float:left; width:300px; height:auto; }
+.cc-left1{ border:1px solid #ddd;}
+.cc-left-title{ margin:0px; font-weight:bold; font-size:14px; line-height:36px; padding: 0px 12px;border-bottom:1px dashed #ddd; background:#f2f2f2;}
+.cc-left-title p{ height:40px;  line-height:40px; padding-left:12px; font-weight:bold; font-size:14px;}
+.cc-left ul{ margin:10px; padding:0px;}
+.cc-left li{ height:36px; border-bottom:1px dashed #ddd; list-style:none;}
+.cc-left li a{ display:block; height:36px; background:#fff; background:url(../images/c-page-urlbg.jpg) no-repeat 245px 11px #fff; padding-left:10px; color:#333;border-bottom:1px dashed #ddd;} 
+.cc-left li a:hover{ background:#005d86;background:url(../images/c-page-urlbg1.jpg) no-repeat 245px 11px #005d86; color:#fff; line-height:36px; text-decoration:none;}
+.cc-right{ border:1px solid #ddd; float:right; width:670px; min-height:580px;}
+.cc-content{ margin:20px;}
+.cc-content ul,.zhuanye-content ul{ margin:0px; padding:0px;}
+.cc-content ul li{ list-style:none;line-height:25px;background:url(../images/libg.jpg) left center no-repeat; height:25px; margin-left:12px;}
+.cc-content ul li a{ margin-left:12px; color:#333;}
+.fenye{ margin:20px 0px 0px 0px ;}
+.fenye a{ text-decoration:none;}
+.fenye a:hover,.nowpage{ background:#d7d7d7; color:#fff; text-decoration:none;}
+.prevpage ,.nextpage{
+	display:block;
+	height:25px; 
+	width:60px;
+	background:#f2f2f2;
+	border-radius:3px;
+	border:1px solid #ddd;
+	text-align:center;
+	float:left;
+	margin:0 5px;
+}
+.fenyelink{ float:left; height:25px; border-left:1px solid #ddd; border-top:1px solid #ddd; border-bottom:1px solid #ddd; border-radius:3px; overflow:hidden;}
+.fenyelink a{ display:block; border-right:1px solid #ddd; padding:0px 10px; float:left; height:25px; line-height:25px;}
+.zhuanye-content li{ margin:20px; list-style:none; height:193px; overflow:hidden; border:1px solid #ddd; box-shadow:1px #f2f2f2 1px 1px 1px; padding:5px;}
+.zhuanye-content li a{ text-decoration:none; color:#333;}
+.zhuangye-c{ text-indent:2em; height:100px; overflow:hidden;}
+.zhuanye-content li a:hover{ text-decoration:none; color:#333;}
+.zhuanye-content li img{ float:left; margin:20px 10px 0px 0px ;	}
+.zhuanye-words{ margin-top:17px;}
+.zhuanye-title{ font-size:14px; font-weight:bold; color:#333;}
+.zhuanye-info{ font-size:12px; color:#666;}
