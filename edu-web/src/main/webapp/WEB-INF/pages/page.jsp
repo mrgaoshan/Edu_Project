@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>test page</title>
-<link rel="stylesheet" href="resources/css/jquery.dataTables.css">
-<link rel="stylesheet" href="resources/css/ace.css">
-<script type="text/javascript" src="resources/js/jquery/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="resources/js/jquery/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jquery.dataTables.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/ace.css">
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery/jquery.dataTables.js"></script>
 </head>
 <script type="text/javascript">
 $(function () {

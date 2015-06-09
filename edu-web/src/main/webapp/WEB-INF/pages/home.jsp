@@ -1,14 +1,294 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" href="resources/css/jquery.dataTables.css">
-<link rel="stylesheet" href="resources/css/ace.css">
-<script type="text/javascript" src="resources/js/jquery/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="resources/js/jquery/jquery.dataTables.js"></script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>升学网</title>
+<link href="<%=request.getContextPath() %>/resources/css/bootstrap.css" rel="stylesheet" />
+<link href="<%=request.getContextPath() %>/resources/css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/js.js"></script>
 </head>
+
 <body>
-home page.ss.....
+	<div class="index-header-line">
+    	<div class="index-center">
+        	<span class="wellcomeword">欢迎您来到升学网！</span>
+            <span class="index-hl-link">
+                <a href="#">网站首页</a> |
+                <a href="#">加入收藏</a> |
+                <a href="#">设为主页</a> |
+            </span>
+        </div>
+    </div>
+    <div class="index-center logo-tel">
+    	<a href="#"><img src="<%=request.getContextPath() %>/resources/images/logo.png" class="index-logo" /></a>
+        <img src="<%=request.getContextPath() %>/resources/images/tel.png" class="index-tel" />
+    </div>
+    <div class="index-nav">
+    	<div class="index-center">
+        	<a href="#">首页</a>
+            <span></span>
+            <a href="#">天一学校</a>
+            <span></span>
+            <a href="#">成都信息技术学校</a>
+            <span></span>
+            <a href="#">商贸管理学校</a>
+            <span></span>
+            <a href="#">机电工程学校</a>
+            <span></span>
+            <a href="#">五月花学校</a>
+            <span></span>
+            <a href="#">四川化工高级技学校</a>
+            <span></span>
+            <a href="#">在线报名</a>
+        </div>
+    </div>
+    <div class="index-lb-form index-center">
+    	<div class="index-lb">
+        	<div id="myCarousel" class="carousel slide">
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="active item"><img src="<%=request.getContextPath() %>/resources/images/lb1.jpg" /></div>
+                <div class="item"><img src="<%=request.getContextPath() %>/resources/images/lb2.jpg" /></div>
+                <div class="item"><img src="<%=request.getContextPath() %>/resources/images/lb3.jpg" /></div>
+              </div>
+              <!-- Carousel nav -->
+              <a class="carousel-control left" href="#myCarousel" style="background:url(<%=request.getContextPath() %>/resources/images/prevb.png) no-repeat center" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#myCarousel" style="background:url(<%=request.getContextPath() %>/resources/images/nextbg.png) no-repeat center" data-slide="next">&rsaquo;</a>
+            </div>
+        </div>
+        <div class="index-form">
+  			<div class="c-index-m-f" style="height:332px;">
+            	<p class="c-i-m-f-t" style="text-align:center; height:35px; line-height:35px; font-size:16px">在线报名</p>
+            	<form method="post" action="#" class="zxbm">
+                	<p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">您的名称：</label><input type="text" name="name"  style=" font-size:14px;" class="fdfinput" placeholder="输入名称" /></p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名学校：</label><select style=" font-size:14px;" name="zhuanye" class="fdfinput">
+                    							<option selected="selected" value="">学校1</option>
+                                                <option value="">学校1</option>
+                                                <option value="">学校1</option>
+                                                <option value="">学校1</option>
+                                              </select>
+                    </p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名专业：</label><select style=" font-size:14px;" name="zhuanye" class="fdfinput">
+                    							<option selected="selected" value="">专业1</option>
+                                                <option value="">专业1</option>
+                                                <option value="">专业1</option>
+                                                <option value="">专业1</option>
+                                              </select>
+                    </p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">联系方式：</label><input style=" font-size:14px;" type="text" name="tel" class="fdfinput" placeholder="输入联系方式" /></p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">您的Q Q：</label><input style=" font-size:14px;" type="text" name="QQ" class="fdfinput"  placeholder="输入数字"/></p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">出生日期：</label><input style=" font-size:14px;" type="text" name="birthday" placeholder="yyyymmdd" class="fdfinput" /></p>
+                    <p style=" font-size:14px;"><label style="width:70px; font-size:14px;">性   别：</label>男：<input style=" font-size:14px;" type="radio" name="sex" value="male" />
+                                           女：<input style=" font-size:14px;" type="radio" name="sex" value="female" />
+                    </p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;"></label><input type="submit" style=" font-size:14px;" class="submit" value="提交" /></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="index-center index-line1">
+        	<div class="index-jz" >
+                <div class="col-lg-4" style="width:335px; float:left; padding:0; height:350px">
+        		<div class="c-index-m-c" style="height:340px;">
+            	<p class="c-i-m-c-t"><span>招生简章</span></p>
+                <div class="c-i-m-c-c">
+                	<ul>
+                    	<li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                    </ul>
+                </div>
+            </div>
+            	</div>
+           		<div class="col-lg-4" style="width:335px; float:right; padding:0">
+                <div class="c-index-m-c" style="height:340px;">
+                    <p class="c-i-m-c-t"><span>热门专业</span></p>
+                    <div class="c-i-m-c-c">
+                        <ul>
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li> 
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li> 
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <div class="index-slist">
+            	<a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
+                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
+                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
+                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
+                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
+                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
+            </div>
+        </div>
+        <div class="index-center">
+        	<img src="<%=request.getContextPath() %>/resources/images/adv.jpg" />
+        </div>
+        <div class="index-center index-college-box ">
+        	<div class="col-lg-6 index-college index-left">
+            	<p class="index-college-title"><span>天一学校</span></p>
+                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
+                <div class="index-college-content">
+                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
+                    <p><strong>招生层次：</strong>中专、大专、本科</p>
+                    <p><strong>所有费用：</strong>8200元/年</p>
+                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                </div>
+            </div>
+            <div class="col-lg-6 index-college index-right">
+            	<p class="index-college-title"><span>成都信息技术学校</span></p>
+                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
+                <div class="index-college-content">
+                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
+                    <p><strong>招生层次：</strong>中专、大专、本科</p>
+                    <p><strong>所有费用：</strong>8200元/年</p>
+                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                </div>
+            </div>
+            <div class="col-lg-6 index-college index-left">
+            	<p class="index-college-title"><span>商贸管理学校</span></p>
+                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
+                <div class="index-college-content">
+                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
+                    <p><strong>招生层次：</strong>中专、大专、本科</p>
+                    <p><strong>所有费用：</strong>8200元/年</p>
+                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                </div>
+            </div>
+            <div class="col-lg-6 index-college index-right">
+            	<p class="index-college-title"><span>机电工程学校</span></p>
+                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
+                <div class="index-college-content">
+                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
+                    <p><strong>招生层次：</strong>中专、大专、本科</p>
+                    <p><strong>所有费用：</strong>8200元/年</p>
+                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                </div>
+            </div>
+            <div class="col-lg-6 index-college index-left">
+            	<p class="index-college-title"><span>五月花学校</span></p>
+                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
+                <div class="index-college-content">
+                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
+                    <p><strong>招生层次：</strong>中专、大专、本科</p>
+                    <p><strong>所有费用：</strong>8200元/年</p>
+                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                </div>
+            </div>
+            <div class="col-lg-6 index-college index-right">
+            	<p class="index-college-title"><span>四川化工高级技工学校</span></p>
+                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
+                <div class="index-college-content">
+                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
+                    <p><strong>招生层次：</strong>中专、大专、本科</p>
+                    <p><strong>所有费用：</strong>8200元/年</p>
+                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                </div>
+            </div>
+        </div>
+        <div class="index-center index-news">
+        	<div class="col-lg-4">
+            	<div class="index-news-c">
+                    <p>
+                        <span class="in1">学校信息</span>
+                        <span class="in2">College news</span>
+                        <a href="#">>></a>
+                    </p>
+                    <ul>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+            	<div class="index-news-c" style="margin:0 auto;">
+                    <p>
+                        <span class="in1">学校信息</span>
+                        <span class="in2">College news</span>
+                        <a href="#">>></a>
+                    </p>
+                    <ul>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+            	<div class="index-news-c" style="float:right; margin-right:0px;">
+                    <p>
+                        <span class="in1">学校信息</span>
+                        <span class="in2">College news</span>
+                        <a href="#">>></a>
+                    </p>
+                    <ul>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                        <li><a href="#">这是一条招生简章内容</a></li>
+                    </ul>
+              	</div>
+            </div>
+        </div>
+        <div class="index-center index-link row">
+        	<p>
+            	<span class="in1">友情链接</span>
+                <span class="in2">Links</span>
+            </p>
+            <div class="index-link-c">
+            	<a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="btinfo">
+        	<div class="index-center">
+            	全国报名电话：02812345678 24小时服务热线：400-2154-124
+               	©2015 成都升学选校网（WWW.SHENXXX.COM)版权所有 
+            </div>
+        </div>
 </body>
 </html>
