@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -13,7 +14,8 @@
 </head>
 
 <body>
-	<div class="college-header-line">
+    <jsp:include page="./college-top.jsp" />
+	<%--<div class="college-header-line">
     	<div class="college-center">
         	<span class="wellcomeword"></span>
             <span class="college-hl-link">
@@ -51,7 +53,7 @@
     </div>
     <div class="c-main-img college-center">
     	<img src="images/tianyiimg.jpg" />
-    </div>
+    </div>--%>
     <div style="float:left; width:100%; height:auto; margin-top:20px;">
    		<div class="college-center college-page">
     	<div class="cc-left">
@@ -92,19 +94,23 @@
         
         <div class="cc-right">
         	<div class="cc-content">
-            	<ul>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                    <li><a href="#">这是一条招生简章内容</a></li>
-                </ul>
+                <c:if test="${newsList != null}">
+                    <ul>
+                        <c:forEach items="${newsList}" var="news">
+                            <li><a href="${ctx}/school/newsInfo/${news.id}.do">${news.title}</a></li>
+                    </c:forEach>
+                    </ul>
+                </c:if>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
+                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
                 <div class="fenye">
                 	<a href="#" class="prevpage">上一页</a>
                     <div class="fenyelink">
@@ -123,12 +129,12 @@
      <div style="float:left; width:100%; height:auto;">
     <div class="c-link">
         <div class="college-center">
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
         </div>
     </div>
      <div class="btinfo">

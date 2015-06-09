@@ -13,7 +13,9 @@
 </head>
 
 <body>
-	<div class="college-header-line">
+    <jsp:include page="./college-top.jsp" />
+
+	<%--<div class="college-header-line">
     	<div class="college-center">
         	<span class="wellcomeword"></span>
             <span class="college-hl-link">
@@ -51,7 +53,7 @@
     </div>
     <div class="c-main-img college-center">
     	<img src="images/tianyiimg.jpg" />
-    </div>
+    </div>--%>
     <div style="float:left; width:100%; height:auto; margin-top:20px;">
    		<div class="college-center college-page">
     	<div class="cc-left">
@@ -92,8 +94,7 @@
         
         <div class="cc-right">
         	<div class="cc-content">
-            	这是内容
-            这是内容这是内容这是内容这是内容这是内容这是内容
+            	${newsdetail.content}
             </div>
         </div>
     </div>
@@ -101,12 +102,12 @@
      <div style="float:left; width:100%; height:auto;">
     <div class="c-link">
         <div class="college-center">
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
         </div>
     </div>
      <div class="btinfo">

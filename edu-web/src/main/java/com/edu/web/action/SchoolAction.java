@@ -12,13 +12,14 @@ import com.edu.model.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 
 @Controller
-@RequestMapping("/schoolpage")
+@RequestMapping("/school")
 public class SchoolAction {
 
     @Autowired
@@ -37,8 +38,8 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/home")
-    public String home(Model model, Integer id){
+    @RequestMapping("/home/{id}")
+    public String home(Model model, @PathVariable Integer id){
 
         School school = (School) schoolService.selectByPrimaryKey(id);
         if(school == null){
@@ -49,10 +50,11 @@ public class SchoolAction {
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
         model.addAttribute("sch", school);
+        model.addAttribute("schId", school.getId());
 //        model.addAttribute("majorList", majorList);
         model.addAttribute("zszsList", zszsList);
         model.addAttribute("xyfgList", xyfgList);
-        return "";
+        return "college-index";
     }
 
     /**
@@ -61,13 +63,13 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/major")
-    public String majorList(Model model, Integer id){
+    @RequestMapping("/major/{id}")
+    public String majorList(Model model, @PathVariable Integer id){
 
         List<Major> majorList= majorService.listBySchool(id);
 
         model.addAttribute("majorList", majorList);
-        return "";
+        return "college-zhuanye";
     }
 
     /**
@@ -76,8 +78,8 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/majorInfo")
-    public String majorInfo(Model model, Integer id){
+    @RequestMapping("/majorInfo/{id}")
+    public String majorInfo(Model model, @PathVariable Integer id){
 
         Major major= (Major) majorService.selectByPrimaryKey(id);
         if(major == null){
@@ -93,13 +95,13 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/news")
-    public String newsList(Model model, Integer id){
+    @RequestMapping("/news/{id}")
+    public String newsList(Model model, @PathVariable Integer id){
 
         List<Newsdetail> newsList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.XYXW);
 
         model.addAttribute("newsList", newsList);
-        return "";
+        return "college-news";
     }
 
     /**
@@ -108,14 +110,14 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/newsInfo")
-    public String newsInfo(Model model, Integer id){
+    @RequestMapping("/newsInfo/{id}")
+    public String newsInfo(Model model, @PathVariable Integer id){
         Newsdetail newsdetail= newsdetailService.updateAndView(id);
         if(newsdetail == null){
             return "error/404";
         }
         model.addAttribute("newsdetail", newsdetail);
-        return "";
+        return "college-page";
     }
 
     /**
@@ -129,7 +131,7 @@ public class SchoolAction {
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
         model.addAttribute("xyfgList", xyfgList);
-        return "";
+        return "college-cp";
     }
 
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -13,7 +14,9 @@
 </head>
 
 <body>
-	<div class="college-header-line">
+    <jsp:include page="./college-top.jsp" />
+
+	<%--<div class="college-header-line">
     	<div class="college-center">
         	<span class="wellcomeword"></span>
             <span class="college-hl-link">
@@ -51,7 +54,7 @@
     </div>
     <div class="c-main-img college-center">
     	<img src="images/tianyiimg.jpg" />
-    </div>
+    </div>--%>
     <div style="float:left; width:100%; height:auto; margin-top:20px;">
    		<div class="college-center college-page">
     	<div class="cc-left">
@@ -92,7 +95,21 @@
         
         <div class="cc-right">
         	<div class="zhuanye-content">
-            	<ul>
+                <c:if test="${majorList != null}">
+                    <ul>
+                        <c:forEach items="${majorList}" var="major">
+                            <li><a href="#">
+                                <img src="${ctx}/resources/images/zhuanyecase.jpg" />
+                                <div class="zhuanye-words">
+                                    <p class="zhuanye-title">${major.name}</p>
+                                    <p class="zhuangye-c">${major.description}</p>
+                                    <p class="zhuanye-info">日期：2015-06-06 06:22:21  访问次数：222</p>
+                                </div>
+                            </a></li>
+                        </c:forEach>
+                    </ul>
+                </c:if>
+            	<%--<ul>
                     <li><a href="#">
                     	<img src="images/zhuanyecase.jpg" />
                         <div class="zhuanye-words">
@@ -118,7 +135,7 @@
                         </div>
                     </a></li>
                     
-                </ul>
+                </ul>--%>
                 <div class="fenye">
                 	<a href="#" class="prevpage">上一页</a>
                     <div class="fenyelink">

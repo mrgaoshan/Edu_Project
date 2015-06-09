@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -13,7 +14,8 @@
 </head>
 
 <body>
-	<div class="college-header-line">
+    <jsp:include page="./college-top.jsp" />
+	<%--<div class="college-header-line">
     	<div class="college-center">
         	<span class="wellcomeword"></span>
             <span class="college-hl-link">
@@ -51,7 +53,7 @@
     </div>
     <div class="c-main-img college-center">
     	<img src="images/tianyiimg.jpg" />
-    </div>
+    </div>--%>
     <div style="float:left; width:100%; height:auto; margin-top:20px;">
    		<div class="college-center college-page">
     	<div class="cc-left">
@@ -100,13 +102,13 @@
               </ol>
               <!-- Carousel items -->
               <div class="carousel-inner">
-                <div class="active item"><img src="images/lb1.jpg" /><p style="position:absolute; bottom: 0px; background:#666; height:25px; text-align:center;width: 100%;margin: 0px;color: #fff;">图书馆</p></div>
-                <div class="item"><img src="images/lb2.jpg" /><p style="position:absolute; bottom: 0px; background:#666; height:25px; text-align:center;width: 100%;margin: 0px;color: #fff;">图书馆</p></div>
-                <div class="item"><img src="images/lb3.jpg" /><p style="position:absolute; bottom: 0px; background:#666; height:25px; text-align:center;width: 100%;margin: 0px;color: #fff;">图书馆</p></div>
+                <div class="active item"><img src="${ctx}/resources/images/lb1.jpg" /><p style="position:absolute; bottom: 0px; background:#666; height:25px; text-align:center;width: 100%;margin: 0px;color: #fff;">图书馆</p></div>
+                <div class="item"><img src="${ctx}/resources/images/lb2.jpg" /><p style="position:absolute; bottom: 0px; background:#666; height:25px; text-align:center;width: 100%;margin: 0px;color: #fff;">图书馆</p></div>
+                <div class="item"><img src="${ctx}/resources/images/lb3.jpg" /><p style="position:absolute; bottom: 0px; background:#666; height:25px; text-align:center;width: 100%;margin: 0px;color: #fff;">图书馆</p></div>
               </div>
               <!-- Carousel nav -->
-              <a class="carousel-control left" href="#myCarousel" style="background:url(images/prevb.png) no-repeat center" data-slide="prev">&lsaquo;</a>
-              <a class="carousel-control right" href="#myCarousel" style="background:url(images/nextbg.png) no-repeat center" data-slide="next">&rsaquo;</a>
+              <a class="carousel-control left" href="#myCarousel" style="background:url(${ctx}/resources/images/prevb.png) no-repeat center" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#myCarousel" style="background:url(${ctx}/resources/images/nextbg.png) no-repeat center" data-slide="next">&rsaquo;</a>
             </div>
             </div>
         </div>
@@ -115,12 +117,19 @@
      <div style="float:left; width:100%; height:auto;">
     <div class="c-link">
         <div class="college-center">
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
+            <c:if test="${xyfgList != null}">
+                <c:forEach items="${xyfgList}" var="xyfg">
+                    <img src="${ctx}/resources/images/${xyfg.path}" />
+                    <%--<img src="${ctx}/resources/images/clinks.jpg" />--%>
+                    <%--<img src="${ctx}/resources/images/clinks.jpg" />--%>
+                </c:forEach>
+            </c:if>
+            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
+            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
+            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
+            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
+            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
+            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
         </div>
     </div>
      <div class="btinfo">

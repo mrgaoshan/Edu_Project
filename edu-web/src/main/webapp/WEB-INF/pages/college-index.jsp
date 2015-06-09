@@ -13,51 +13,14 @@ pageEncoding="UTF-8"%>
 </head>
 
 <body>
-	<div class="college-header-line">
-    	<div class="college-center">
-        	<span class="wellcomeword"></span>
-            <span class="college-hl-link">
-                <a href="#">网站首页</a> |
-                <a href="#">加入收藏</a> |
-                <a href="#">设为主页</a> |
-            </span>
-        </div>
-    </div>
-    <div class="college-l-t">
-    	<div class="college-center">
-        	<a href="#">
-            	<img src="images/tianyilogo.jpg" />
-            </a>
-            <p>
-            	<i>
-                <span class="c-t-title">24小时服务热线：</span><br />
-                <span class="c-t-content">028-12345678</span>
-                </i>
-            </p>
-        </div>
-    </div>
-    <div class="college-center c-nav">
-    	<ul>
-        	<li><a href="#">学校首页</a></li>
-        	<li><a href="#">关于学校</a></li>
-        	<li><a href="#">专业设置</a></li>
-        	<li><a href="#">校园新闻</a></li>
-        	<li><a href="#">校园风光</a></li>
-        	<li><a href="#">就业中心</a></li>
-        	<li><a href="#">收费标准</a></li>
-        	<li><a href="#">在线报名</a></li>
-        	<li><a href="#">联系方式</a></li>
-        </ul>
-    </div>
-    <div class="c-main-img college-center">
-    	<img src="images/tianyiimg.jpg" />
-    </div>
+    <jsp:include page="./college-top.jsp" />
+
     <div class="c-index-main">
     	<div class="col-lg-4" style="width:355px;">
         	<div class="c-index-m-c">
             	<p class="c-i-m-c-t"><span>学校简介</span></p>
                 <div class="c-i-m-c-c">
-                	内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                	${sch.description}
                 </div>
             </div>
         </div>
@@ -65,7 +28,7 @@ pageEncoding="UTF-8"%>
         	<div class="c-index-m-c">
             	<p class="c-i-m-c-t"><span>招生介绍</span></p>
                 <div class="c-i-m-c-c">
-                	内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    ${sch.demand}
                 </div>
             </div>
         </div>
@@ -142,23 +105,23 @@ pageEncoding="UTF-8"%>
     	<p class="c-i-m-c-t"><span>证书展示</span></p>
     	<ul>
         	<li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
         </ul>
@@ -167,23 +130,23 @@ pageEncoding="UTF-8"%>
     	<p class="c-i-m-c-t"><span>校企合作</span></p>
     	<ul>
         	<li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
         </ul>
@@ -192,35 +155,35 @@ pageEncoding="UTF-8"%>
     	<p class="c-i-m-c-t"><span>校园风光</span></p>
     	<ul>
         	<li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
             <li class="">
-            	<img src="images/imgcase.jpg" />
+            	<img src="${ctx}/resources/images/imgcase.jpg" />
                 <p>图片名称</p>
             </li>
         </ul>
     </div>
     <div class="c-link">
         <div class="college-center">
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
         </div>
     </div>
      <div class="btinfo">
