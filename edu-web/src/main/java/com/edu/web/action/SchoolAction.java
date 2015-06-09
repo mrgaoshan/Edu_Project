@@ -32,7 +32,7 @@ public class SchoolAction {
 
 
     /**
-     * 学校首页
+     * 瀛﹂櫌棣栭〉
      * @param model
      * @param id
      * @return
@@ -56,7 +56,7 @@ public class SchoolAction {
     }
 
     /**
-     * 专业列表
+     * 涓撲笟鍒楄〃
      * @param model
      * @param id
      * @return
@@ -70,6 +70,12 @@ public class SchoolAction {
         return "";
     }
 
+    /**
+     * 涓撲笟璇︽儏
+     * @param model
+     * @param id
+     * @return
+     */
     @RequestMapping("/majorInfo")
     public String majorInfo(Model model, Integer id){
 
@@ -81,6 +87,12 @@ public class SchoolAction {
         return "";
     }
 
+    /**
+     * 鏂伴椈鍒楄〃
+     * @param model
+     * @param id
+     * @return
+     */
     @RequestMapping("/news")
     public String newsList(Model model, Integer id){
 
@@ -90,14 +102,12 @@ public class SchoolAction {
         return "";
     }
 
-    @RequestMapping("/scenery")
-    public String sceneryList(Model model, Integer id){
-        List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
-
-        model.addAttribute("xyfgList", xyfgList);
-        return "";
-    }
-
+    /**
+     * 鏂伴椈璇︽儏
+     * @param model
+     * @param id
+     * @return
+     */
     @RequestMapping("/newsInfo")
     public String newsInfo(Model model, Integer id){
         Newsdetail newsdetail= newsdetailService.updateAndView(id);
@@ -107,4 +117,19 @@ public class SchoolAction {
         model.addAttribute("newsdetail", newsdetail);
         return "";
     }
+
+    /**
+     * 鏍″洯椋庡厜
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("/scenery")
+    public String sceneryList(Model model, Integer id){
+        List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
+
+        model.addAttribute("xyfgList", xyfgList);
+        return "";
+    }
+
 }
