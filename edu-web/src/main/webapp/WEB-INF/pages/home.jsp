@@ -10,6 +10,48 @@
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/js.js"></script>
+<script>
+
+function changeShool(obj){
+	
+	var schoolId = $(obj).val();
+	$("#majorList").empty();  
+	var emptopt = " <option value='0' selected='selected'>---选择专业---</option>";
+	$("#majorList").append(emptopt);
+	 $.post("findMajor.do",{shoolId:schoolId},function(result){ 
+		   $(result).each(function(index){
+			   
+			   var majorName =result[index].name;
+			   
+			   var majorId =result[index].id;
+			   
+			   var opt = "<option value="+majorId + ">"+majorName+"</option>"
+			   
+			   $("#majorList").append(opt);
+			  
+		   });
+		  });
+}
+
+
+function submitForm(){
+	
+			$.ajax({
+		                cache: true,
+		                type: "POST",
+		                url: "<%=request.getContextPath() %>/user/apply.do",
+		                data:$('#registForm').serialize(),
+		                async: false,
+		                error: function(request) {
+		                    alert("Connection error");
+		                },
+		                success: function(data) {
+		                   alert(data.msg);
+		                }
+		            });
+}
+
+</script>
 </head>
 
 <body>
@@ -31,17 +73,17 @@
     	<div class="index-center">
         	<a href="#">首页</a>
             <span></span>
-            <a href="#">天一学校</a>
+            <a href="school/home.do?id=1">天一学校</a>
             <span></span>
-            <a href="#">成都信息技术学校</a>
+            <a href="school/home.do?id=2">成都信息技术学校</a>
             <span></span>
-            <a href="#">商贸管理学校</a>
+            <a href="school/home.do?id=3">商贸管理学校</a>
             <span></span>
-            <a href="#">机电工程学校</a>
+            <a href="school/home.do?id=4">机电工程学校</a>
             <span></span>
-            <a href="#">五月花学校</a>
+            <a href="school/home.do?id=5">五月花学校</a>
             <span></span>
-            <a href="#">四川化工高级技学校</a>
+            <a href="school/home.do?id=6">四川化工高级技学校</a>
             <span></span>
             <a href="#">在线报名</a>
         </div>
@@ -68,29 +110,28 @@
         <div class="index-form">
   			<div class="c-index-m-f" style="height:332px;">
             	<p class="c-i-m-f-t" style="text-align:center; height:35px; line-height:35px; font-size:16px">在线报名</p>
-            	<form method="post" action="#" class="zxbm">
+            	<form method="post" id="registForm" action="" class="zxbm">
                 	<p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">您的名称：</label><input type="text" name="name"  style=" font-size:14px;" class="fdfinput" placeholder="输入名称" /></p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名学校：</label><select style=" font-size:14px;" name="zhuanye" class="fdfinput">
-                    							<option selected="selected" value="">学校1</option>
-                                                <option value="">学校1</option>
-                                                <option value="">学校1</option>
-                                                <option value="">学校1</option>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名学校：</label><select style=" font-size:14px;" name="schoolid" class="fdfinput" onchange="changeShool(this)">
+                    							  <option value="0" selected="selected">---选择学校---</option>
+                    							 <c:forEach items="${schoolsList}" var="item">
+                    							  <option value="${item.id}">${item.name} </option>
+                    							 </c:forEach>
+                    							     
                                               </select>
                     </p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名专业：</label><select style=" font-size:14px;" name="zhuanye" class="fdfinput">
-                    							<option selected="selected" value="">专业1</option>
-                                                <option value="">专业1</option>
-                                                <option value="">专业1</option>
-                                                <option value="">专业1</option>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名专业：</label><select style=" font-size:14px;" name="majorid" class="fdfinput" id="majorList">
+                    						 	 <option value="0" selected="selected">---选择专业---</option>
+                                               
                                               </select>
                     </p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">联系方式：</label><input style=" font-size:14px;" type="text" name="tel" class="fdfinput" placeholder="输入联系方式" /></p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">您的Q Q：</label><input style=" font-size:14px;" type="text" name="QQ" class="fdfinput"  placeholder="输入数字"/></p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">联系方式：</label><input style=" font-size:14px;" type="text" name="phone" class="fdfinput" placeholder="输入联系方式" /></p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">您的Q Q：</label><input style=" font-size:14px;" type="text" name="qq" class="fdfinput"  placeholder="输入数字"/></p>
                     <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">出生日期：</label><input style=" font-size:14px;" type="text" name="birthday" placeholder="yyyymmdd" class="fdfinput" /></p>
-                    <p style=" font-size:14px;"><label style="width:70px; font-size:14px;">性   别：</label>男：<input style=" font-size:14px;" type="radio" name="sex" value="male" />
-                                           女：<input style=" font-size:14px;" type="radio" name="sex" value="female" />
+                    <p style=" font-size:14px;"><label style="width:70px; font-size:14px;">性   别：</label>男：<input style=" font-size:14px;" type="radio" name="gender" value="male" />
+                                           女：<input style=" font-size:14px;" type="radio" name="gender" value="female" />
                     </p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;"></label><input type="submit" style=" font-size:14px;" class="submit" value="提交" /></p>
+                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;"></label><input type="button" style=" font-size:14px;" class="submit" value="提交" onclick="submitForm()"/></p>
                 </form>
             </div>
         </div>
@@ -102,17 +143,9 @@
             	<p class="c-i-m-c-t"><span>招生简章</span></p>
                 <div class="c-i-m-c-c">
                 	<ul>
-                    	<li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
+                	<c:forEach items="${zsjjList}" var="item">
+                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -223,13 +256,9 @@
                         <a href="#">>></a>
                     </p>
                     <ul>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
+                     <c:forEach items="${xxxxList}" var="item">
+                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -237,18 +266,14 @@
             <div class="col-lg-4">
             	<div class="index-news-c" style="margin:0 auto;">
                     <p>
-                        <span class="in1">学校信息</span>
-                        <span class="in2">College news</span>
+                        <span class="in1">中考资讯</span>
+                        <span class="in2">Senior high school entrance</span>
                         <a href="#">>></a>
                     </p>
                     <ul>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
+                         <c:forEach items="${zkxxList}" var="item">
+                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -256,18 +281,14 @@
             <div class="col-lg-4">
             	<div class="index-news-c" style="float:right; margin-right:0px;">
                     <p>
-                        <span class="in1">学校信息</span>
-                        <span class="in2">College news</span>
+                        <span class="in1">高考资讯</span>
+                        <span class="in2">College entrance examination</span>
                         <a href="#">>></a>
                     </p>
                     <ul>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
+                     <c:forEach items="${gkxxList}" var="item">
+                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    </c:forEach>
                     </ul>
               	</div>
             </div>

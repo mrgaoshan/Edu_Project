@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="schoolId" property="schoolid" jdbcType="INTEGER" />
     <result column="majorId" property="majorid" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="gender" property="gender" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="BIGINT" />
     <result column="qq" property="qq" jdbcType="BIGINT" />
@@ -28,7 +28,7 @@
       name, gender, phone, 
       qq)
     values (#{schoolid,jdbcType=INTEGER}, #{majorid,jdbcType=INTEGER}, 
-      #{name,jdbcType=INTEGER}, #{gender,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT}, 
+      #{name,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT}, 
       #{qq,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.edu.model.bean.Registration" >
@@ -61,7 +61,7 @@
         #{majorid,jdbcType=INTEGER},
       </if>
       <if test="name != null" >
-        #{name,jdbcType=INTEGER},
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="gender != null" >
         #{gender,jdbcType=VARCHAR},
@@ -84,7 +84,7 @@
         majorId = #{majorid,jdbcType=INTEGER},
       </if>
       <if test="name != null" >
-        name = #{name,jdbcType=INTEGER},
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="gender != null" >
         gender = #{gender,jdbcType=VARCHAR},
@@ -102,7 +102,7 @@
     update registration
     set schoolId = #{schoolid,jdbcType=INTEGER},
       majorId = #{majorid,jdbcType=INTEGER},
-      name = #{name,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=BIGINT},
       qq = #{qq,jdbcType=BIGINT}

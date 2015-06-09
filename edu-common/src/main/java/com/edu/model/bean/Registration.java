@@ -14,7 +14,7 @@ public class Registration extends BaseAppTO{
 
     private Integer majorid;
 
-    private Integer name;
+    private String name;
 
     private String gender;
 
@@ -46,11 +46,11 @@ public class Registration extends BaseAppTO{
         this.majorid = majorid;
     }
 
-    public Integer getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Integer name) {
+    public void setName(String name) {
         this.name = name;
     }
 
