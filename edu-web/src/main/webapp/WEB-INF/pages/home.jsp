@@ -25,7 +25,7 @@ function changeShool(obj){
 			   
 			   var majorId =result[index].id;
 			   
-			   var opt = "<option value="+majorId + ">"+majorName+"</option>"
+			   var opt = "<option value="+majorId + ">"+majorName+"</option>";
 			   
 			   $("#majorList").append(opt);
 			  
