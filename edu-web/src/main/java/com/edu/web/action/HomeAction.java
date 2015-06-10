@@ -42,12 +42,14 @@ public class HomeAction {
 		List<Newsdetail> xxxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.XXXX);
 		List<Newsdetail> zkxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.ZKXX);
 		List<School> schoolsList =  schoolService.selectAll();
+		List<Major> topMajorList = majorService.selectTop10();
 
 		model.addAttribute("gkxxList", gkxxList);
 		model.addAttribute("zsjjList", zsjjList);
 		model.addAttribute("xxxxList", xxxxList);
 		model.addAttribute("zkxxList", zkxxList);
 		model.addAttribute("schoolsList", schoolsList);
+		model.addAttribute("topMajorList", topMajorList);
 
 		return "home";
 

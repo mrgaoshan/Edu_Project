@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>升学网</title>
-<link href="<%=request.getContextPath() %>/resources/css/bootstrap.css" rel="stylesheet" />
-<link href="<%=request.getContextPath() %>/resources/css/style.css" rel="stylesheet" />
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/js.js"></script>
+	<link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
+	<link href="${ctx}/resources/css/style.css" rel="stylesheet" />
+	<script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
 <script>
 
 function changeShool(obj){
@@ -73,17 +73,17 @@ function submitForm(){
     	<div class="index-center">
         	<a href="#">首页</a>
             <span></span>
-            <a href="school/home.do?id=1">天一学校</a>
+            <a href="school/home/1.do">天一学校</a>
             <span></span>
-            <a href="school/home.do?id=2">成都信息技术学校</a>
+            <a href="school/home/2.do">成都信息技术学校</a>
             <span></span>
-            <a href="school/home.do?id=3">商贸管理学校</a>
+            <a href="school/home/3.do">商贸管理学校</a>
             <span></span>
-            <a href="school/home.do?id=4">机电工程学校</a>
+            <a href="school/home/4.do">机电工程学校</a>
             <span></span>
-            <a href="school/home.do?id=5">五月花学校</a>
+            <a href="school/home/5.do">五月花学校</a>
             <span></span>
-            <a href="school/home.do?id=6">四川化工高级技学校</a>
+            <a href="school/home/6.do">四川化工高级技学校</a>
             <span></span>
             <a href="#">在线报名</a>
         </div>
@@ -155,17 +155,10 @@ function submitForm(){
                     <p class="c-i-m-c-t"><span>热门专业</span></p>
                     <div class="c-i-m-c-c">
                         <ul>
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li> 
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li> 
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
-                            <li><a href="#">商务管理专业【天一学校】</a></li>
+                      
+                         <c:forEach items="${topMajorList}" var="item">
+                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.name}</a></li>
+                  		 </c:forEach>
                            
                         </ul>
                     </div>

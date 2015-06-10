@@ -69,6 +69,7 @@ public class SchoolAction {
         List<Major> majorList= majorService.listBySchool(id);
 
         model.addAttribute("majorList", majorList);
+        model.addAttribute("schId", id);
         return "college-zhuanye";
     }
 
@@ -86,6 +87,7 @@ public class SchoolAction {
             return "error/404";
         }
         model.addAttribute("major", major);
+        model.addAttribute("schId", id);
         return "";
     }
 
@@ -131,6 +133,7 @@ public class SchoolAction {
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
         model.addAttribute("xyfgList", xyfgList);
+        model.addAttribute("schId", id);
         return "college-cp";
     }
 

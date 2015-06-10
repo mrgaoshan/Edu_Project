@@ -1,13 +1,12 @@
 package com.edu.model.service;
 
-import com.edu.base.bean.BaseAppTO;
-import com.edu.model.bean.Major;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.edu.base.service.BaseAppService;
+import com.edu.model.bean.Major;
 import com.edu.model.mapper.MajorMapper;
-
-import java.util.List;
 
 @Service("majorService")
 public class MajorService extends BaseAppService<MajorMapper>{
@@ -19,5 +18,11 @@ public class MajorService extends BaseAppService<MajorMapper>{
 
 	public List<Major> listBySchool(Integer schoolId) {
 		return mapper.listBySchool(schoolId);
+	}
+	
+	
+	public List<Major> selectTop10(){
+		
+		return mapper.selectTop10();
 	}
 }

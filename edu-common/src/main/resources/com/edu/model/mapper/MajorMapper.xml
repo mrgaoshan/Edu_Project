@@ -125,4 +125,11 @@
     from major
     where schoolId = #{schoolId,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectTop10" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from major
+    order by readtimes desc  limit 0,10
+  </select>
 </mapper>

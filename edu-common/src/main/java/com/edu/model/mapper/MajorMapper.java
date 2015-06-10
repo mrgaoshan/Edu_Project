@@ -8,4 +8,6 @@ import java.util.List;
 public interface MajorMapper extends BaseAppMapper{
 
     List<Major> listBySchool(Integer schoolId);
+    
+    List<Major> selectTop10();
 }
