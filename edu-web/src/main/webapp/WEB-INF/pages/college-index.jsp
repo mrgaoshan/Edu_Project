@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -41,16 +42,13 @@ pageEncoding="UTF-8"%>
         	<div class="c-index-m-c">
             	<p class="c-i-m-c-t"><span>中考资讯</span></p>
                 <div class="c-i-m-c-c">
-                	<ul>
-                    	<li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                    </ul>
+                    <c:if test="${zkxxList != null}">
+                        <ul>
+                            <c:forEach items="${zkxxList}" var="zk">
+                                <li><a href="${ctx}/school/newsInfo/${schId}/${zk.id}.do">${zk.title}</a></li>
+                            </c:forEach>
+                        </ul>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -58,16 +56,13 @@ pageEncoding="UTF-8"%>
         	<div class="c-index-m-c">
             	<p class="c-i-m-c-t"><span>高考资讯</span></p>
                 <div class="c-i-m-c-c">
-                	<ul>
-                    	<li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                        <li><a href="#">这是一条招生简章内容</a></li>
-                    </ul>
+                    <c:if test="${gkxxList != null}">
+                        <ul>
+                            <c:forEach items="${gkxxList}" var="gk">
+                                <li><a href="${ctx}/school/newsInfo/${schId}/${gk.id}.do">${gk.title}</a></li>
+                            </c:forEach>
+                        </ul>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -106,8 +101,18 @@ pageEncoding="UTF-8"%>
                 <p>图片名称</p>
             </li>
         </ul>
+        <%--<c:if test="${zszsList != null}">
+            <ul>
+                <c:forEach items="${zszsList}" var="zszs">
+                    <li class="">
+                        <img src="${ctx}/resources/images/${zszs.path}" />
+                        <p>${zszs.description}</p>
+                    </li>
+                </c:forEach>
+            </ul>
+        </c:if>--%>
     </div>
-    <div class="college-center c-index-images">
+    <%--<div class="college-center c-index-images">
     	<p class="c-i-m-c-t"><span>校企合作</span></p>
     	<ul>
         	<li class="">
@@ -131,7 +136,7 @@ pageEncoding="UTF-8"%>
                 <p>图片名称</p>
             </li>
         </ul>
-    </div>
+    </div>--%>
     <div class="college-center c-index-images">
     	<p class="c-i-m-c-t"><span>校园风光</span></p>
     	<ul>
@@ -156,6 +161,16 @@ pageEncoding="UTF-8"%>
                 <p>图片名称</p>
             </li>
         </ul>
+        <%--<c:if test="${xyfgList != null}">
+        <ul>
+            <c:forEach items="${xyfgList}" var="xyfg">
+                <li class="">
+                    <img src="${ctx}/resources/images/${xyfg.path}" />
+                    <p>${xyfg.description}</p>
+                </li>
+            </c:forEach>
+        </ul>
+        </c:if>--%>
     </div>
     <div class="c-link">
         <div class="college-center">

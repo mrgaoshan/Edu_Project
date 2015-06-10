@@ -48,12 +48,16 @@ public class SchoolAction {
 //        List<Major> majorList= majorService.listBySchool(id);
         List<Picture> zszsList = pictureService.listByTypeAndSchool(Constant.PictureCategory.ZSZS, id);
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
+        List<Newsdetail> zkxxList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.ZKXX);
+        List<Newsdetail> gkxxList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.GKXX);
 
         model.addAttribute("sch", school);
         model.addAttribute("schId", school.getId());
 //        model.addAttribute("majorList", majorList);
         model.addAttribute("zszsList", zszsList);
         model.addAttribute("xyfgList", xyfgList);
+        model.addAttribute("zkxxList", zkxxList);
+        model.addAttribute("gkxxList", gkxxList);
         return "college-index";
     }
 
@@ -102,7 +106,6 @@ public class SchoolAction {
         if(major == null){
             return "error/404";
         }
-//        model.addAttribute("major", major);
         model.addAttribute("schId", schId);
         model.addAttribute("content", major.getDescription());
         return "college-page";
