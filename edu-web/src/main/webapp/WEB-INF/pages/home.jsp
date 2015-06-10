@@ -51,6 +51,20 @@ function submitForm(){
 		            });
 }
 
+
+		function bookmark(){
+			  
+
+		      alert('添加失败\n您可以通过浏览器，手动收藏');  
+		     
+		}
+		
+		function saveHome(){
+			
+			alert("设置首页失败，请手动设置！");  
+				    
+		}
+
 </script>
 </head>
 
@@ -59,9 +73,9 @@ function submitForm(){
     	<div class="index-center">
         	<span class="wellcomeword">欢迎您来到升学网！</span>
             <span class="index-hl-link">
-                <a href="#">网站首页</a> |
-                <a href="#">加入收藏</a> |
-                <a href="#">设为主页</a> |
+                <a href="/edu-web">网站首页</a> |
+                <a href="#" onclick="bookmark();">加入收藏</a> |
+                <a href="#" onclick="saveHome();">设为主页</a> |
             </span>
         </div>
     </div>
@@ -71,21 +85,21 @@ function submitForm(){
     </div>
     <div class="index-nav">
     	<div class="index-center">
-        	<a href="#">首页</a>
+        	<a href="/edu-web">首页</a>
             <span></span>
-            <a href="school/home/1.do">天一学校</a>
+            <a href="school/index/1.do">天一学校</a>
             <span></span>
-            <a href="school/home/2.do">成都信息技术学校</a>
+            <a href="school/index/2.do">成都信息技术学校</a>
             <span></span>
-            <a href="school/home/3.do">商贸管理学校</a>
+            <a href="school/index/3.do">商贸管理学校</a>
             <span></span>
-            <a href="school/home/4.do">机电工程学校</a>
+            <a href="school/index/4.do">机电工程学校</a>
             <span></span>
-            <a href="school/home/5.do">五月花学校</a>
+            <a href="school/index/5.do">五月花学校</a>
             <span></span>
-            <a href="school/home/6.do">四川化工高级技学校</a>
+            <a href="school/index/6.do">四川化工高级技学校</a>
             <span></span>
-            <a href="#">在线报名</a>
+           <!--  <a href="#">在线报名</a> -->
         </div>
     </div>
     <div class="index-lb-form index-center">
@@ -144,7 +158,7 @@ function submitForm(){
                 <div class="c-i-m-c-c">
                 	<ul>
                 	<c:forEach items="${zsjjList}" var="item">
-                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    	<li><a href="<c:url value="viewNews.do?id=${item.id}"/>">${item.title}</a></li>
                     </c:forEach>
                     </ul>
                 </div>
@@ -157,7 +171,7 @@ function submitForm(){
                         <ul>
                       
                          <c:forEach items="${topMajorList}" var="item">
-                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.name}</a></li>
+                    	<li><a href="<c:url value="school/majorInfo/${item.schoolid}/${item.id}.do"/>">${item.name}</a></li>
                   		 </c:forEach>
                            
                         </ul>
@@ -250,7 +264,7 @@ function submitForm(){
                     </p>
                     <ul>
                      <c:forEach items="${xxxxList}" var="item">
-                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    	<li><a href="<c:url value="viewNews.do?id=${item.id}"/>">${item.title}</a></li>
                     </c:forEach>
                     </ul>
                 </div>
@@ -265,7 +279,7 @@ function submitForm(){
                     </p>
                     <ul>
                          <c:forEach items="${zkxxList}" var="item">
-                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    	<li><a href="<c:url value="viewNews.do?id=${item.id}"/>">${item.title}</a></li>
                     </c:forEach>
                     </ul>
                 </div>
@@ -280,7 +294,7 @@ function submitForm(){
                     </p>
                     <ul>
                      <c:forEach items="${gkxxList}" var="item">
-                    	<li><a href="<c:url value="edu-web/viewNews.do?id=${item.id}"/>">${item.title}</a></li>
+                    	<li><a href="<c:url value="viewNews.do?id=${item.id}"/>">${item.title}</a></li>
                     </c:forEach>
                     </ul>
               	</div>

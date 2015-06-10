@@ -35,7 +35,7 @@ public class HomeAction {
 	@Autowired
 	private MajorService majorService;
 
-	@RequestMapping(value = "/home")
+	@RequestMapping(value = "/index")
 	public String homePage(Model model) {
 		List<Newsdetail> gkxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.GKXX);
 		List<Newsdetail> zsjjList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.ZSJJ);
@@ -60,9 +60,18 @@ public class HomeAction {
 
 		Newsdetail newsdetail =  newsdetailService.updateAndView(id);
 		
-		model.addAttribute("newsdetail", newsdetail);
+		List<Newsdetail> gkxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.GKXX);
+		List<Newsdetail> xxxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.XXXX);
+		List<Newsdetail> zkxxList = newsdetailService.findBySchoolAndCate(0, Constant.NewsCategory.ZKXX);
 		
-		return "viewNews";
+		//model.addAttribute("newsdetail", newsdetail);
+		model.addAttribute("gkxxList", gkxxList);
+		model.addAttribute("xxxxList", xxxxList);
+		model.addAttribute("zkxxList", zkxxList);
+		
+		model.addAttribute("content", newsdetail.getContent());
+		
+		return "home-page";
 
 	}
 	
