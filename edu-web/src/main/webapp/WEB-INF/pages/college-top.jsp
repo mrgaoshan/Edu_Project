@@ -27,7 +27,7 @@
   <input type="hidden" value="${schId}">
   <ul>
     <li><a href="${ctx}/school/home/${schId}.do">学校首页</a></li>
-    <li><a href="#">关于学校</a></li>
+    <li><a href="${ctx}/school/about/${schId}.do">关于学校</a></li>
     <li><a href="${ctx}/school/major/${schId}.do">专业设置</a></li>
     <li><a href="${ctx}/school/news/${schId}.do">校园新闻</a></li>
     <li><a href="${ctx}/school/scenery/${schId}.do">校园风光</a></li>

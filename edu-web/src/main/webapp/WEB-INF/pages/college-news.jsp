@@ -57,20 +57,9 @@
     <div style="float:left; width:100%; height:auto; margin-top:20px;">
    		<div class="college-center college-page">
     	<div class="cc-left">
-        	<div class="cc-left1">
-                <p class="cc-left-title">信息导航</p>
-                <ul>
-                    <li><a href="#">关于学校</a></li>
-                    <li><a href="#">专业设置</a></li>
-                    <li><a href="#">校园新闻</a></li>
-                    <li><a href="#">校园风光</a></li>
-                    <li><a href="#">就业中心</a></li>
-                    <li><a href="#">收费标准</a></li>
-                    <li><a href="#">联系方式</a></li>
-                </ul>
-            </div>
-            
-         	<div class="c-index-m-f" style="margin-top:20px;">
+            <jsp:include page="./college-left.jsp" />
+
+            <div class="c-index-m-f" style="margin-top:20px;">
             	<p class="c-i-m-f-t">在线报名</p>
             	<form method="post" action="#" class="zxbm">
                 	<p><label>您的名称：</label><input type="text" name="name"  class="fdfinput" placeholder="输入名称" /></p>
@@ -97,7 +86,7 @@
                 <c:if test="${newsList != null}">
                     <ul>
                         <c:forEach items="${newsList}" var="news">
-                            <li><a href="${ctx}/school/newsInfo/${news.id}.do">${news.title}</a></li>
+                            <li><a href="${ctx}/school/newsInfo/${schId}/${news.id}.do">${news.title}</a></li>
                     </c:forEach>
                     </ul>
                 </c:if>

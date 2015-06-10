@@ -58,6 +58,22 @@ public class SchoolAction {
     }
 
     /**
+     * 关于学校
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("/about/{id}")
+    public String about(Model model, @PathVariable Integer id){
+
+        School school = (School) schoolService.selectByPrimaryKey(id);
+
+        model.addAttribute("content", school.getDescription());
+        model.addAttribute("schId", id);
+        return "college-page";
+    }
+
+    /**
      * 专业列表
      * @param model
      * @param id
@@ -79,16 +95,17 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/majorInfo/{id}")
-    public String majorInfo(Model model, @PathVariable Integer id){
+    @RequestMapping("/majorInfo/{schId}/{id}")
+    public String majorInfo(Model model, @PathVariable Integer schId, @PathVariable Integer id){
 
         Major major= (Major) majorService.selectByPrimaryKey(id);
         if(major == null){
             return "error/404";
         }
-        model.addAttribute("major", major);
-        model.addAttribute("schId", id);
-        return "";
+//        model.addAttribute("major", major);
+        model.addAttribute("schId", schId);
+        model.addAttribute("content", major.getDescription());
+        return "college-page";
     }
 
     /**
@@ -103,6 +120,7 @@ public class SchoolAction {
         List<Newsdetail> newsList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.XYXW);
 
         model.addAttribute("newsList", newsList);
+        model.addAttribute("schId", id);
         return "college-news";
     }
 
@@ -112,13 +130,14 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/newsInfo/{id}")
-    public String newsInfo(Model model, @PathVariable Integer id){
+    @RequestMapping("/newsInfo/{schId}/{id}")
+    public String newsInfo(Model model, @PathVariable Integer schId, @PathVariable Integer id){
         Newsdetail newsdetail= newsdetailService.updateAndView(id);
         if(newsdetail == null){
             return "error/404";
         }
-        model.addAttribute("newsdetail", newsdetail);
+        model.addAttribute("content", newsdetail.getContent());
+        model.addAttribute("schId", schId);
         return "college-page";
     }
 
@@ -128,8 +147,8 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/scenery")
-    public String sceneryList(Model model, Integer id){
+    @RequestMapping("/scenery/{id}")
+    public String sceneryList(Model model, @PathVariable Integer id){
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
         model.addAttribute("xyfgList", xyfgList);

@@ -15,62 +15,12 @@
 <body>
     <jsp:include page="./college-top.jsp" />
 
-	<%--<div class="college-header-line">
-    	<div class="college-center">
-        	<span class="wellcomeword"></span>
-            <span class="college-hl-link">
-                <a href="#">网站首页</a> |
-                <a href="#">加入收藏</a> |
-                <a href="#">设为主页</a> |
-            </span>
-        </div>
-    </div>
-    <div class="college-l-t">
-    	<div class="college-center">
-        	<a href="#">
-            	<img src="images/tianyilogo.jpg" />
-            </a>
-            <p>
-            	<i>
-                <span class="c-t-title">24小时服务热线：</span><br />
-                <span class="c-t-content">028-12345678</span>
-                </i>
-            </p>
-        </div>
-    </div>
-    <div class="college-center c-nav">
-    	<ul>
-        	<li><a href="#">学校首页</a></li>
-        	<li><a href="#">关于学校</a></li>
-        	<li><a href="#">专业设置</a></li>
-        	<li><a href="#">校园新闻</a></li>
-        	<li><a href="#">校园风光</a></li>
-        	<li><a href="#">就业中心</a></li>
-        	<li><a href="#">收费标准</a></li>
-        	<li><a href="#">在线报名</a></li>
-        	<li><a href="#">联系方式</a></li>
-        </ul>
-    </div>
-    <div class="c-main-img college-center">
-    	<img src="images/tianyiimg.jpg" />
-    </div>--%>
     <div style="float:left; width:100%; height:auto; margin-top:20px;">
    		<div class="college-center college-page">
     	<div class="cc-left">
-        	<div class="cc-left1">
-                <p class="cc-left-title">信息导航</p>
-                <ul>
-                    <li><a href="#">关于学校</a></li>
-                    <li><a href="#">专业设置</a></li>
-                    <li><a href="#">校园新闻</a></li>
-                    <li><a href="#">校园风光</a></li>
-                    <li><a href="#">就业中心</a></li>
-                    <li><a href="#">收费标准</a></li>
-                    <li><a href="#">联系方式</a></li>
-                </ul>
-            </div>
-            
-         	<div class="c-index-m-f" style="margin-top:20px;">
+            <jsp:include page="./college-left.jsp" />
+
+            <div class="c-index-m-f" style="margin-top:20px;">
             	<p class="c-i-m-f-t">在线报名</p>
             	<form method="post" action="#" class="zxbm">
                 	<p><label>您的名称：</label><input type="text" name="name"  class="fdfinput" placeholder="输入名称" /></p>
@@ -94,7 +44,7 @@
         
         <div class="cc-right">
         	<div class="cc-content">
-            	${newsdetail.content}
+            	${content}
             </div>
         </div>
     </div>
