@@ -38,8 +38,8 @@ public class SchoolAction {
      * @param id
      * @return
      */
-    @RequestMapping("/home/{id}")
-    public String home(Model model, @PathVariable Integer id){
+    @RequestMapping("/index/{id}")
+    public String index(Model model, @PathVariable Integer id){
 
         School school = (School) schoolService.selectByPrimaryKey(id);
         if(school == null){
