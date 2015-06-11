@@ -12,7 +12,7 @@
 </div>
 <div class="college-l-t">
     <div class="college-center">
-        <a href="#">
+        <a href="${ctx}/school/index/${schId}.do">
             <img src="${ctx}${logo}" style="width:400px;height:95px"/>
         </a>
           <p>
