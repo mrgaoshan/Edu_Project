@@ -2,14 +2,18 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
 <title>升学网</title>
 	<link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
 	<link href="${ctx}/resources/css/style.css" rel="stylesheet" />
 	<script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
+</head>
+
 <script>
 
 function changeShool(obj){
@@ -64,7 +68,7 @@ function saveHome(){
 		    
 }
 </script>
-</head>
+
 
 <body>
 	<div class="index-header-line">
