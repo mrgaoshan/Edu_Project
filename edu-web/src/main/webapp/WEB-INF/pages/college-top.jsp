@@ -4,7 +4,7 @@
     <div class="college-center">
         <span class="wellcomeword"></span>
             <span class="college-hl-link">
-                <a href="#">网站首页</a> |
+                <a href="${ctx}">网站首页</a> | 
                 <a href="#">加入收藏</a> |
                 <a href="#">设为主页</a> |
             </span>
