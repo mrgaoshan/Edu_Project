@@ -76,7 +76,7 @@ public class SchoolAction {
 
         model.addAttribute("content", school.getDescription());
         model.addAttribute("schId", id);
-        setLogo(model,id);
+        setLogo(model, id);
         return "college-page";
     }
 
@@ -93,7 +93,7 @@ public class SchoolAction {
 
         model.addAttribute("majorList", majorList);
         model.addAttribute("schId", id);
-        setLogo(model,id);
+        setLogo(model, id);
         return "college-zhuanye";
     }
 
@@ -111,7 +111,7 @@ public class SchoolAction {
             return "error/404";
         }
         model.addAttribute("schId", schId);
-        setLogo(model,id);
+        setLogo(model, schId);
         model.addAttribute("content", major.getDescription());
         return "college-page";
     }
@@ -147,7 +147,7 @@ public class SchoolAction {
         }
         model.addAttribute("content", newsdetail.getContent());
         model.addAttribute("schId", schId);
-        setLogo(model,schId);
+        setLogo(model, schId);
         return "college-page";
     }
 
@@ -166,7 +166,42 @@ public class SchoolAction {
         setLogo(model,id);
         return "college-cp";
     }
-    
+
+    /**
+     * 联系我们
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("/contact/{id}")
+    public String contact(Model model, @PathVariable Integer id){
+        School school = (School) schoolService.selectByPrimaryKey(id);
+
+        model.addAttribute("content", school.getContact());
+        model.addAttribute("schId", id);
+        setLogo(model, id);
+        return "college-page";
+    }
+    /**
+     * 联系我们
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("/fee/{id}")
+    public String fee(Model model, @PathVariable Integer id){
+        List<Newsdetail> list= newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.SFBZ);
+        Newsdetail newsdetail = null;
+        if(list !=null && list.size() != 0){
+            newsdetail = list.get(0);
+        }
+
+        model.addAttribute("content", newsdetail != null ? newsdetail.getContent() : null);
+        model.addAttribute("schId", id);
+        setLogo(model, id);
+        return "college-page";
+    }
+
     public void setLogo(Model model,Integer schoolId){
     	   List<Picture> logoList = pictureService.listByTypeAndSchool(Constant.PictureCategory.LOGO, schoolId);
     	   model.addAttribute("logo", logoList.get(0).getPath());

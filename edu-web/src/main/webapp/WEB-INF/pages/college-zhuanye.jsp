@@ -79,34 +79,7 @@
                         </c:forEach>
                     </ul>
                 </c:if>
-            	<%--<ul>
-                    <li><a href="#">
-                    	<img src="images/zhuanyecase.jpg" />
-                        <div class="zhuanye-words">
-                        	<p class="zhuanye-title">电子商务专业</p>
-                            <p class="zhuangye-c">电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业</p>
-                            <p class="zhuanye-info">日期：2015-06-06 06:22:21  访问次数：222</p>
-                        </div>
-                    </a></li>
-                   	<li><a href="#">
-                    	<img src="images/zhuanyecase.jpg" />
-                        <div class="zhuanye-words">
-                        	<p class="zhuanye-title">电子商务专业</p>
-                            <p class="zhuangye-c">电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业</p>
-                            <p class="zhuanye-info">日期：2015-06-06 06:22:21  访问次数：222</p>
-                        </div>
-                    </a></li>
-                    <li><a href="#">
-                    	<img src="images/zhuanyecase.jpg" />
-                        <div class="zhuanye-words">
-                        	<p class="zhuanye-title">电子商务专业</p>
-                            <p class="zhuangye-c">电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业电子商务专业</p>
-                            <p class="zhuanye-info">日期：2015-06-06 06:22:21  访问次数：222</p>
-                        </div>
-                    </a></li>
-                    
-                </ul>--%>
-                <div class="fenye">
+                <%--<div class="fenye">
                 	<a href="#" class="prevpage">上一页</a>
                     <div class="fenyelink">
                     	<a href="#">1</a>
@@ -116,7 +89,7 @@
                         <a href="#">5</a>
                     </div>
                 	<a href="#" class="nextpage">下一页</a>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>
@@ -124,12 +97,12 @@
      <div style="float:left; width:100%; height:auto;">
     <div class="c-link">
         <div class="college-center">
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
-            <a href="#"><img src="images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
+            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
         </div>
     </div>
      <div class="btinfo">

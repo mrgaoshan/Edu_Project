@@ -56,12 +56,6 @@
                     <%--<img src="${ctx}/resources/images/clinks.jpg" />--%>
                 </c:forEach>
             </c:if>
-            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
-            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
-            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
-            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
-            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
-            <%--<a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>--%>
         </div>
     </div>
      <div class="btinfo">
