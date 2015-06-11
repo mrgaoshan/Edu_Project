@@ -24,7 +24,8 @@ public class Constant {
 		public final static String XXJJ="XXJJ";
 		@ConstantDesc(groupName = "NewsCategory", descValue = "分类-校园新闻")
 		public final static String XYXW="XYXW";
-
+		@ConstantDesc(groupName = "NewsCategory", descValue = "收费标准")
+		public final static String SFBZ="SFBZ";
 	}
 
 	public static interface PictureCategory {

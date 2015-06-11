@@ -6,7 +6,7 @@
     <li><a href="${ctx}/school/major/${schId}.do">专业设置</a></li>
     <li><a href="${ctx}/school/news/${schId}.do">校园新闻</a></li>
     <li><a href="${ctx}/school/scenery/${schId}.do">校园风光</a></li>
-    <li><a href="#">收费标准</a></li>
-    <li><a href="#">联系方式</a></li>
+    <li><a href="${ctx}/school/fee/${schId}.do">收费标准</a></li>
+    <li><a href="${ctx}/school/contact/${schId}.do">联系方式</a></li>
   </ul>
 </div>
