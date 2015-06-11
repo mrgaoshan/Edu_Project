@@ -76,7 +76,7 @@ public class SchoolAction {
 
         model.addAttribute("content", school.getDescription());
         model.addAttribute("schId", id);
-        setLogo(model,id);
+        setLogo(model, id);
         return "college-page";
     }
 
@@ -93,7 +93,7 @@ public class SchoolAction {
 
         model.addAttribute("majorList", majorList);
         model.addAttribute("schId", id);
-        setLogo(model,id);
+        setLogo(model, id);
         return "college-zhuanye";
     }
 
@@ -111,7 +111,7 @@ public class SchoolAction {
             return "error/404";
         }
         model.addAttribute("schId", schId);
-        setLogo(model,id);
+        setLogo(model, schId);
         model.addAttribute("content", major.getDescription());
         return "college-page";
     }
@@ -147,7 +147,7 @@ public class SchoolAction {
         }
         model.addAttribute("content", newsdetail.getContent());
         model.addAttribute("schId", schId);
-        setLogo(model,schId);
+        setLogo(model, schId);
         return "college-page";
     }
 

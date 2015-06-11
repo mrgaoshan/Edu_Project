@@ -70,17 +70,7 @@
                     </c:forEach>
                     </ul>
                 </c:if>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                    <%--<li><a href="#">这是一条招生简章内容</a></li>--%>
-                <div class="fenye">
+                <%--<div class="fenye">
                 	<a href="#" class="prevpage">上一页</a>
                     <div class="fenyelink">
                     	<a href="#">1</a>
@@ -90,7 +80,7 @@
                         <a href="#">5</a>
                     </div>
                 	<a href="#" class="nextpage">下一页</a>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>
