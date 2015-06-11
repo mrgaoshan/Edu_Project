@@ -32,6 +32,8 @@ public class Constant {
 		public final static String ZSZS = "ZSZS";
 		@ConstantDesc(groupName = "PictureCategory", descValue = "校园风光")
 		public final static String XYFG = "XYFG";
+		@ConstantDesc(groupName = "PictureCategory", descValue = "学校logo")
+		public final static String LOGO = "LOGO";
 	}
 
 }

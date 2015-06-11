@@ -48,12 +48,15 @@ public class SchoolAction {
 //        List<Major> majorList= majorService.listBySchool(id);
         List<Picture> zszsList = pictureService.listByTypeAndSchool(Constant.PictureCategory.ZSZS, id);
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
-
+        
+     
+        setLogo(model,id);
         model.addAttribute("sch", school);
         model.addAttribute("schId", school.getId());
 //        model.addAttribute("majorList", majorList);
         model.addAttribute("zszsList", zszsList);
         model.addAttribute("xyfgList", xyfgList);
+       
         return "college-index";
     }
 
@@ -70,6 +73,7 @@ public class SchoolAction {
 
         model.addAttribute("content", school.getDescription());
         model.addAttribute("schId", id);
+        setLogo(model,id);
         return "college-page";
     }
 
@@ -86,6 +90,7 @@ public class SchoolAction {
 
         model.addAttribute("majorList", majorList);
         model.addAttribute("schId", id);
+        setLogo(model,id);
         return "college-zhuanye";
     }
 
@@ -104,6 +109,7 @@ public class SchoolAction {
         }
 //        model.addAttribute("major", major);
         model.addAttribute("schId", schId);
+        setLogo(model,id);
         model.addAttribute("content", major.getDescription());
         return "college-page";
     }
@@ -121,6 +127,7 @@ public class SchoolAction {
 
         model.addAttribute("newsList", newsList);
         model.addAttribute("schId", id);
+        setLogo(model,id);
         return "college-news";
     }
 
@@ -138,6 +145,7 @@ public class SchoolAction {
         }
         model.addAttribute("content", newsdetail.getContent());
         model.addAttribute("schId", schId);
+        setLogo(model,schId);
         return "college-page";
     }
 
@@ -153,7 +161,13 @@ public class SchoolAction {
 
         model.addAttribute("xyfgList", xyfgList);
         model.addAttribute("schId", id);
+        setLogo(model,id);
         return "college-cp";
+    }
+    
+    public void setLogo(Model model,Integer schoolId){
+    	   List<Picture> logoList = pictureService.listByTypeAndSchool(Constant.PictureCategory.LOGO, schoolId);
+    	   model.addAttribute("logo", logoList.get(0).getPath());
     }
 
 }

@@ -13,7 +13,7 @@
 <div class="college-l-t">
     <div class="college-center">
         <a href="#">
-            <img src="${ctx}/resources/images/tianyilogo.jpg" />
+            <img src="${ctx}${logo}" style="width:400px;height:95px"/>
         </a>
           <p>
               <i>
