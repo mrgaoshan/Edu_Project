@@ -159,7 +159,7 @@ public class SchoolAction {
     public String sceneryList(Model model, @PathVariable Integer id){
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
-        model.addAttribute("xyfgList", xyfgList);
+        model.addAttribute("picList", xyfgList);
         setTopInfo(model,id);
         return "college-cp";
     }
