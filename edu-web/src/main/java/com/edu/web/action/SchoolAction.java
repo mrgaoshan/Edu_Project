@@ -45,19 +45,20 @@ public class SchoolAction {
         if(school == null){
             return "error/404";
         }
-//        List<Major> majorList= majorService.listBySchool(id);
         List<Picture> zszsList = pictureService.listByTypeAndSchool(Constant.PictureCategory.ZSZS, id);
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
-     
-        setLogo(model,id);
+        List<Picture> xqhzList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XQHZ, id);
+
         List<Newsdetail> zkxxList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.ZKXX);
         List<Newsdetail> gkxxList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.GKXX);
 
-        model.addAttribute("sch", school);
-        model.addAttribute("schId", school.getId());
-//        model.addAttribute("majorList", majorList);
+        setTopInfo(model,id);
+
+//        model.addAttribute("sch", school);
+//        model.addAttribute("schId", school.getId());
         model.addAttribute("zszsList", zszsList);
         model.addAttribute("xyfgList", xyfgList);
+        model.addAttribute("xqhzList", xqhzList);
         model.addAttribute("zkxxList", zkxxList);
         model.addAttribute("gkxxList", gkxxList);
         return "college-index";
@@ -75,8 +76,8 @@ public class SchoolAction {
         School school = (School) schoolService.selectByPrimaryKey(id);
 
         model.addAttribute("content", school.getDescription());
-        model.addAttribute("schId", id);
-        setLogo(model, id);
+//        model.addAttribute("schId", id);
+        setTopInfo(model, id);
         return "college-page";
     }
 
@@ -92,8 +93,8 @@ public class SchoolAction {
         List<Major> majorList= majorService.listBySchool(id);
 
         model.addAttribute("majorList", majorList);
-        model.addAttribute("schId", id);
-        setLogo(model, id);
+//        model.addAttribute("schId", id);
+        setTopInfo(model, id);
         return "college-zhuanye";
     }
 
@@ -110,8 +111,8 @@ public class SchoolAction {
         if(major == null){
             return "error/404";
         }
-        model.addAttribute("schId", schId);
-        setLogo(model, schId);
+//        model.addAttribute("schId", schId);
+        setTopInfo(model, schId);
         model.addAttribute("content", major.getDescription());
         return "college-page";
     }
@@ -128,8 +129,8 @@ public class SchoolAction {
         List<Newsdetail> newsList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.XYXW);
 
         model.addAttribute("newsList", newsList);
-        model.addAttribute("schId", id);
-        setLogo(model,id);
+//        model.addAttribute("schId", id);
+        setTopInfo(model,id);
         return "college-news";
     }
 
@@ -146,8 +147,8 @@ public class SchoolAction {
             return "error/404";
         }
         model.addAttribute("content", newsdetail.getContent());
-        model.addAttribute("schId", schId);
-        setLogo(model, schId);
+//        model.addAttribute("schId", schId);
+        setTopInfo(model, schId);
         return "college-page";
     }
 
@@ -162,8 +163,8 @@ public class SchoolAction {
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
         model.addAttribute("xyfgList", xyfgList);
-        model.addAttribute("schId", id);
-        setLogo(model,id);
+//        model.addAttribute("schId", id);
+        setTopInfo(model,id);
         return "college-cp";
     }
 
@@ -178,8 +179,8 @@ public class SchoolAction {
         School school = (School) schoolService.selectByPrimaryKey(id);
 
         model.addAttribute("content", school.getContact());
-        model.addAttribute("schId", id);
-        setLogo(model, id);
+//        model.addAttribute("schId", id);
+        setTopInfo(model, id);
         return "college-page";
     }
     /**
@@ -197,14 +198,18 @@ public class SchoolAction {
         }
 
         model.addAttribute("content", newsdetail != null ? newsdetail.getContent() : null);
-        model.addAttribute("schId", id);
-        setLogo(model, id);
+//        model.addAttribute("schId", id);
+        setTopInfo(model, id);
         return "college-page";
     }
 
-    public void setLogo(Model model,Integer schoolId){
-    	   List<Picture> logoList = pictureService.listByTypeAndSchool(Constant.PictureCategory.LOGO, schoolId);
-    	   model.addAttribute("logo", logoList.get(0).getPath());
+    public void setTopInfo(Model model,Integer schoolId){
+        School school = (School) schoolService.selectByPrimaryKey(schoolId);
+        List<Picture> syzsList= pictureService.listByTypeAndSchool(Constant.PictureCategory.SYZS, schoolId);
+
+        model.addAttribute("sch", school);
+        model.addAttribute("syzs", syzsList != null && syzsList.size() > 0 ? syzsList.get(0) : null);
+        model.addAttribute("logo", school.getLogo());
     }
 
 }

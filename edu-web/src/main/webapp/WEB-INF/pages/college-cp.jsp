@@ -6,12 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
-<title>学校首页</title>
-<link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
-<link href="${ctx}/resources/css/style.css" rel="stylesheet" />
-<script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
+<title>升学网-${sch.name}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
+    <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
+    <link href="${ctx}/resources/css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,17 @@
         
         <div class="cc-right">
         	<div class="cc-content">
-                <div id="myCarousel" class="carousel slide">
+                <c:if test="${xyfgList != null}">
+                    <c:forEach items="${xyfgList}" var="xyfg">
+                        <div style="width:100%; height:auto; text-align:center; overflow:hidden;">
+                            <img src="${ctx}/resources/images/${xyfg.path}">
+                        </div>
+                        <div style="width:100%; height:auto; text-align:center; overflow:hidden; font-size:14px; font-weight:bolder; color:#333; margin-bottom:10px;">
+                            ${xyfg.description}
+                        </div>
+                    </c:forEach>
+                </c:if>
+                <%--<div id="myCarousel" class="carousel slide">
                   <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -41,29 +52,11 @@
                   <!-- Carousel nav -->
                   <a class="carousel-control left" href="#myCarousel" style="background:url(${ctx}/resources/images/prevb.png) no-repeat center" data-slide="prev">&lsaquo;</a>
                   <a class="carousel-control right" href="#myCarousel" style="background:url(${ctx}/resources/images/nextbg.png) no-repeat center" data-slide="next">&rsaquo;</a>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>
     </div>
-     <div style="float:left; width:100%; height:auto;">
-    <div class="c-link">
-        <div class="college-center">
-            <c:if test="${xyfgList != null}">
-                <c:forEach items="${xyfgList}" var="xyfg">
-                    <img src="${ctx}/resources/images/${xyfg.path}" />
-                    <%--<img src="${ctx}/resources/images/clinks.jpg" />--%>
-                    <%--<img src="${ctx}/resources/images/clinks.jpg" />--%>
-                </c:forEach>
-            </c:if>
-        </div>
-    </div>
-     <div class="btinfo">
-        	<div class="index-center">
-            	全国报名电话：02812345678 24小时服务热线：400-2154-124
-               	©2015 成都升学选校网（WWW.SHENXXX.COM)版权所有 
-            </div>
-        </div>
-        </div>
+    <jsp:include page="./college-bottom.jsp" />
 </body>
 </html>

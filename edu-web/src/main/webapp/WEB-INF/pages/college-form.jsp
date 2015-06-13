@@ -18,7 +18,7 @@ function submitForm(){
 }
 
 $(function(){
-	var schoolId = '${schId}';
+	var schoolId = '${sch.id}';
 	$("#majorList").empty();  
 	var emptopt = " <option value='0' selected='selected'>---选择专业---</option>";
 	$("#majorList").append(emptopt);

@@ -6,12 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
-<title>学校首页</title>
-<link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
-<link href="${ctx}/resources/css/style.css" rel="stylesheet" />
-<script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
+<title>${sch.name}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
+    <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
+    <link href="${ctx}/resources/css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
 </head>
 
 <body>
@@ -67,7 +68,7 @@
                 <c:if test="${newsList != null}">
                     <ul>
                         <c:forEach items="${newsList}" var="news">
-                            <li><a href="${ctx}/school/newsInfo/${schId}/${news.id}.do">${news.title}</a></li>
+                            <li><a href="${ctx}/school/newsInfo/${sch.id}/${news.id}.do">${news.title}</a></li>
                     </c:forEach>
                     </ul>
                 </c:if>
@@ -86,23 +87,6 @@
         </div>
     </div>
     </div>
-     <div style="float:left; width:100%; height:auto;">
-    <div class="c-link">
-        <div class="college-center">
-            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
-            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
-            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
-            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
-            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
-            <a href="#"><img src="${ctx}/resources/images/clinks.jpg" /></a>
-        </div>
-    </div>
-     <div class="btinfo">
-        	<div class="index-center">
-            	全国报名电话：02812345678 24小时服务热线：400-2154-124
-               	©2015 成都升学选校网（WWW.SHENXXX.COM)版权所有 
-            </div>
-        </div>
-        </div>
+    <jsp:include page="./college-bottom.jsp" />
 </body>
 </html>
