@@ -13,6 +13,9 @@ pageEncoding="UTF-8"%>
     <script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
+    <style>
+        .c-i-form-show{ display:none;}
+    </style>
 </head>
 
 <body>

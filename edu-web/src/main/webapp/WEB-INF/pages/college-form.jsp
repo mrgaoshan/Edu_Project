@@ -41,12 +41,17 @@ $(function(){
 
 
 </script>
-<div class="c-index-m-f" style="margin-top:20px;">
+<div class="c-index-m-f" style="margin-top:20px; height:auto; min-height:250px;">
   <p class="c-i-m-f-t">在线报名</p>
+  <p class="c-i-m-f-t  c-i-form-show" style="text-align:left;  line-height:22px; font-size:14px; color:red;margin-top: -10px;border-bottom: none;background: #e3ffce;">
+    1、请各位同学认真填写一下信息。<br>
+    2、次报名不会影响你的填报志愿。<br>
+    3、多一个选择，多一份希望
+  </p>
   <form method="post" id="registForm" action="#" class="zxbm">
     <p><label>您的名称：</label><input type="text" name="name"  class="fdfinput" placeholder="输入名称" /></p>
     <p><label>报名专业：</label><select name="majorid" class="fdfinput" id="majorList">
-     
+
     </select>
     </p>
     <p><label>联系方式：</label><input type="text" name="phone" class="fdfinput" placeholder="输入联系方式" /></p>

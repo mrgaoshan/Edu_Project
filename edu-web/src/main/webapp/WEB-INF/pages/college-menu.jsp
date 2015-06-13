@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="cc-left1">
+<div style="width:100%; border:1px solid #ddd; margin-bottom:10px;"><img src="${ctx}/resources/images/bmlc.jpg" width="298" /></div>
+<div class="cc-left1" style="display:none;">
   <p class="cc-left-title">信息导航</p>
   <ul>
     <li><a href="${ctx}/school/about/${sch.id}.do">关于学校</a></li>

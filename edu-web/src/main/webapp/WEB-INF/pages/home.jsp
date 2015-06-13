@@ -43,7 +43,7 @@ function submitForm(){
 			$.ajax({
 		                cache: true,
 		                type: "POST",
-		                url: "<%=request.getContextPath() %>/user/apply.do",
+		                url: "${ctx}/user/apply.do",
 		                data:$('#registForm').serialize(),
 		                async: false,
 		                error: function(request) {
@@ -77,19 +77,19 @@ function submitForm(){
     	<div class="index-center">
         	<span class="wellcomeword">欢迎您来到升学网！</span>
             <span class="index-hl-link">
-                <a href="/edu-web">网站首页</a> |
+                <a href="${ctx}/">网站首页</a> |
                 <a href="#" onclick="bookmark();">加入收藏</a> |
                 <a href="#" onclick="saveHome();">设为主页</a> |
             </span>
         </div>
     </div>
     <div class="index-center logo-tel">
-    	<a href="#"><img src="<%=request.getContextPath() %>/resources/images/logo.png" class="index-logo" /></a>
-        <img src="<%=request.getContextPath() %>/resources/images/tel.png" class="index-tel" />
+    	<a href="#"><img src="${ctx}/resources/images/logo.png" class="index-logo" /></a>
+        <img src="${ctx}/resources/images/tel.png" class="index-tel" />
     </div>
     <div class="index-nav">
     	<div class="index-center">
-        	<a href="/edu-web">首页</a>
+        	<a href="${ctx}/">首页</a>
             <span></span>
             <a href="school/index/1.do">天一学校</a>
             <span></span>
@@ -116,13 +116,13 @@ function submitForm(){
               </ol>
               <!-- Carousel items -->
               <div class="carousel-inner">
-                <div class="active item"><img src="<%=request.getContextPath() %>/resources/images/lb1.jpg" /></div>
-                <div class="item"><img src="<%=request.getContextPath() %>/resources/images/lb2.jpg" /></div>
-                <div class="item"><img src="<%=request.getContextPath() %>/resources/images/lb3.jpg" /></div>
+                <div class="active item"><img src="${ctx}/resources/images/lb1.jpg" /></div>
+                <div class="item"><img src="${ctx}/resources/images/lb2.jpg" /></div>
+                <div class="item"><img src="${ctx}/resources/images/lb3.jpg" /></div>
               </div>
               <!-- Carousel nav -->
-              <a class="carousel-control left" href="#myCarousel" style="background:url(<%=request.getContextPath() %>/resources/images/prevb.png) no-repeat center" data-slide="prev">&lsaquo;</a>
-              <a class="carousel-control right" href="#myCarousel" style="background:url(<%=request.getContextPath() %>/resources/images/nextbg.png) no-repeat center" data-slide="next">&rsaquo;</a>
+              <a class="carousel-control left" href="#myCarousel" style="background:url(${ctx}/resources/images/prevb.png) no-repeat center" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#myCarousel" style="background:url(${ctx}/resources/images/nextbg.png) no-repeat center" data-slide="next">&rsaquo;</a>
             </div>
         </div>
         <div class="index-form">
@@ -185,79 +185,79 @@ function submitForm(){
             </div>
             
             <div class="index-slist">
-            	<a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
-                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
-                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
-                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
-                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
-                <a href="#"><img src="<%=request.getContextPath() %>/resources/images/ty.jpg" /></a>
+                <a href="school/index/1.do"><img src="${ctx}/resources/images/tyxx.jpg" /></a>
+                <a href="school/index/2.do"><img src="${ctx}/resources/images/cdxxjsxx.jpg" /></a>
+                <a href="school/index/3.do"><img src="${ctx}/resources/images/gbdsdx.jpg" /></a>
+                <a href="school/index/4.do"><img src="${ctx}/resources/images/cdjdgcxx.jpg" /></a>
+                <a href="school/index/5.do"><img src="${ctx}/resources/images/wyh.jpg" /></a>
+                <a href="school/index/6.do"><img src="${ctx}/resources/images/schggjjgxx.jpg" /></a>
             </div>
         </div>
         <div class="index-center">
-        	<img src="<%=request.getContextPath() %>/resources/images/adv.jpg" />
+        	<img src="${ctx}/resources/images/adv.jpg" />
         </div>
-        <div class="index-center index-college-box ">
-        	<div class="col-lg-6 index-college index-left">
-            	<p class="index-college-title"><span>天一学校</span></p>
-                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
-                <div class="index-college-content">
-                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
-                    <p><strong>招生层次：</strong>中专、大专、本科</p>
-                    <p><strong>所有费用：</strong>8200元/年</p>
-                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-                </div>
-            </div>
-            <div class="col-lg-6 index-college index-right">
-            	<p class="index-college-title"><span>成都信息技术学校</span></p>
-                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
-                <div class="index-college-content">
-                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
-                    <p><strong>招生层次：</strong>中专、大专、本科</p>
-                    <p><strong>所有费用：</strong>8200元/年</p>
-                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-                </div>
-            </div>
-            <div class="col-lg-6 index-college index-left">
-            	<p class="index-college-title"><span>商贸管理学校</span></p>
-                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
-                <div class="index-college-content">
-                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
-                    <p><strong>招生层次：</strong>中专、大专、本科</p>
-                    <p><strong>所有费用：</strong>8200元/年</p>
-                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-                </div>
-            </div>
-            <div class="col-lg-6 index-college index-right">
-            	<p class="index-college-title"><span>机电工程学校</span></p>
-                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
-                <div class="index-college-content">
-                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
-                    <p><strong>招生层次：</strong>中专、大专、本科</p>
-                    <p><strong>所有费用：</strong>8200元/年</p>
-                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-                </div>
-            </div>
-            <div class="col-lg-6 index-college index-left">
-            	<p class="index-college-title"><span>五月花学校</span></p>
-                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
-                <div class="index-college-content">
-                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
-                    <p><strong>招生层次：</strong>中专、大专、本科</p>
-                    <p><strong>所有费用：</strong>8200元/年</p>
-                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-                </div>
-            </div>
-            <div class="col-lg-6 index-college index-right">
-            	<p class="index-college-title"><span>四川化工高级技工学校</span></p>
-                <div class="index-college-img"><img src="<%=request.getContextPath() %>/resources/images/index-college-img.jpg" /></div>
-                <div class="index-college-content">
-                	<p><strong>招生专业：</strong>旅游管理、电子商务、艺术设计、会计、企业管理、建筑、航空服务、幼师等</p>
-                    <p><strong>招生层次：</strong>中专、大专、本科</p>
-                    <p><strong>所有费用：</strong>8200元/年</p>
-                    <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-                </div>
+    <div class="index-center index-college-box ">
+        <div class="col-lg-6 index-college index-left">
+            <p class="index-college-title"><span>天一学校</span></p>
+            <div class="index-college-img"><img src="${ctx}/resources/images/btyxx.jpg" /></div>
+            <div class="index-college-content">
+                <p><strong>招生专业：</strong>电子工程、航空服务、电子商务专业、会计专业、计算机及应用、建筑专业、旅游管理等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>8200元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
             </div>
         </div>
+        <div class="col-lg-6 index-college index-right">
+            <p class="index-college-title"><span>成都信息技术学校</span></p>
+            <div class="index-college-img"><img src="${ctx}/resources/images/bcdxxjsxx.jpg" /></div>
+            <div class="index-college-content">
+                <p><strong>招生专业：</strong>医护管理、计算机信息管理、艺术设计、机电专业、司法警察、航空服务、教育管理等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>5000元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+            </div>
+        </div>
+        <div class="col-lg-6 index-college index-left">
+            <p class="index-college-title"><span>商贸管理学校</span></p>
+            <div class="index-college-img"><img src="${ctx}/resources/images/bschggjjgxx.jpg" /></div>
+            <div class="index-college-content">
+                <p><strong>招生专业：</strong>电信通讯、动漫、广告设计、建筑工程、经济管理、旅游专业、汽车工程、学前教育、小学教育等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>8200元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+            </div>
+        </div>
+        <div class="col-lg-6 index-college index-right">
+            <p class="index-college-title"><span>机电工程学校</span></p>
+            <div class="index-college-img"><img src="${ctx}/resources/images/bcdjdgcxx.jpg" /></div>
+            <div class="index-college-content">
+                <p><strong>招生专业：</strong>阿联酋航空公司-迪拜国际机场航空服务人才定制班、触控技术人才定制班、海航动车高铁乘务人才定制班等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>8200元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+            </div>
+        </div>
+        <div class="col-lg-6 index-college index-left">
+            <p class="index-college-title"><span>五月花学校</span></p>
+            <div class="index-college-img"><img src="${ctx}/resources/images/bwyh.jpg" /></div>
+            <div class="index-college-content">
+                <p><strong>招生专业：</strong>财务会计、电子商务、服装设计、航空服务、护理专业、旅游管理、烹饪专业、汽车全能技师等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>8200元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+            </div>
+        </div>
+        <div class="col-lg-6 index-college index-right">
+            <p class="index-college-title"><span>四川化工高级技工学校</span></p>
+            <div class="index-college-img"><img src="${ctx}/resources/images/index-college-img.jpg" /></div>
+            <div class="index-college-content">
+                <p><strong>招生专业：</strong>电子商务、工程造价、工商企业管理、化工分析与检验、会计专业、计算机软件设计、计算机网络技术等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>8200元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+            </div>
+        </div>
+    </div>
         <div class="index-center index-news">
         	<div class="col-lg-4">
             	<div class="index-news-c">
