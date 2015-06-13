@@ -51,11 +51,13 @@ public class SchoolAction {
 
         List<Newsdetail> zkxxList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.ZKXX);
         List<Newsdetail> gkxxList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.GKXX);
+        List<Newsdetail> zsjjList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.ZSJJ);
 
         setTopInfo(model,id);
 
 //        model.addAttribute("sch", school);
-//        model.addAttribute("schId", school.getId());
+
+        model.addAttribute("zsjj", zsjjList != null && zsjjList.size() > 0 ? zsjjList.get(0).getContent() : null);
         model.addAttribute("zszsList", zszsList);
         model.addAttribute("xyfgList", xyfgList);
         model.addAttribute("xqhzList", xqhzList);
@@ -76,7 +78,6 @@ public class SchoolAction {
         School school = (School) schoolService.selectByPrimaryKey(id);
 
         model.addAttribute("content", school.getDescription());
-//        model.addAttribute("schId", id);
         setTopInfo(model, id);
         return "college-page";
     }
@@ -93,7 +94,6 @@ public class SchoolAction {
         List<Major> majorList= majorService.listBySchool(id);
 
         model.addAttribute("majorList", majorList);
-//        model.addAttribute("schId", id);
         setTopInfo(model, id);
         return "college-zhuanye";
     }
@@ -111,7 +111,6 @@ public class SchoolAction {
         if(major == null){
             return "error/404";
         }
-//        model.addAttribute("schId", schId);
         setTopInfo(model, schId);
         model.addAttribute("content", major.getDescription());
         return "college-page";
@@ -129,7 +128,6 @@ public class SchoolAction {
         List<Newsdetail> newsList = newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.XYXW);
 
         model.addAttribute("newsList", newsList);
-//        model.addAttribute("schId", id);
         setTopInfo(model,id);
         return "college-news";
     }
@@ -147,7 +145,6 @@ public class SchoolAction {
             return "error/404";
         }
         model.addAttribute("content", newsdetail.getContent());
-//        model.addAttribute("schId", schId);
         setTopInfo(model, schId);
         return "college-page";
     }
@@ -163,7 +160,6 @@ public class SchoolAction {
         List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.XYFG, id);
 
         model.addAttribute("xyfgList", xyfgList);
-//        model.addAttribute("schId", id);
         setTopInfo(model,id);
         return "college-cp";
     }
@@ -179,28 +175,32 @@ public class SchoolAction {
         School school = (School) schoolService.selectByPrimaryKey(id);
 
         model.addAttribute("content", school.getContact());
-//        model.addAttribute("schId", id);
         setTopInfo(model, id);
         return "college-page";
     }
     /**
-     * 联系我们
+     * 收费标准
      * @param model
      * @param id
      * @return
      */
     @RequestMapping("/fee/{id}")
     public String fee(Model model, @PathVariable Integer id){
-        List<Newsdetail> list= newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.SFBZ);
+        /*List<Newsdetail> list= newsdetailService.findBySchoolAndCate(id, Constant.NewsCategory.SFBZ);
         Newsdetail newsdetail = null;
         if(list !=null && list.size() != 0){
             newsdetail = list.get(0);
         }
 
         model.addAttribute("content", newsdetail != null ? newsdetail.getContent() : null);
-//        model.addAttribute("schId", id);
         setTopInfo(model, id);
-        return "college-page";
+        return "college-page";*/
+
+        List<Picture> xyfgList = pictureService.listByTypeAndSchool(Constant.PictureCategory.SFBZ, id);
+
+        model.addAttribute("picList", xyfgList);
+        setTopInfo(model,id);
+        return "college-cp";
     }
 
     public void setTopInfo(Model model,Integer schoolId){

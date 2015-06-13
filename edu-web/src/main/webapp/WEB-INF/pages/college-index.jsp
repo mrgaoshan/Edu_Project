@@ -31,7 +31,8 @@ pageEncoding="UTF-8"%>
         	<div class="c-index-m-c">
             	<p class="c-i-m-c-t"><span>招生介绍</span></p>
                 <div class="c-i-m-c-c">
-                    ${sch.demand}
+                    <%--${sch.demand}--%>
+                    ${zsjj}
                 </div>
             </div>
         </div>

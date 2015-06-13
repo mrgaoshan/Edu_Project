@@ -27,14 +27,16 @@
         
         <div class="cc-right">
         	<div class="cc-content">
-                <c:if test="${xyfgList != null}">
-                    <c:forEach items="${xyfgList}" var="xyfg">
+                <c:if test="${picList != null}">
+                    <c:forEach items="${picList}" var="pic">
                         <div style="width:100%; height:auto; text-align:center; overflow:hidden;">
-                            <img src="${ctx}/resources/images/${xyfg.path}">
+                            <img src="${ctx}/resources/images/${pic.path}">
                         </div>
-                        <div style="width:100%; height:auto; text-align:center; overflow:hidden; font-size:14px; font-weight:bolder; color:#333; margin-bottom:10px;">
-                            ${xyfg.description}
-                        </div>
+                        <c:if test="${pic.description != null}">
+                            <div style="width:100%; height:auto; text-align:center; overflow:hidden; font-size:14px; font-weight:bolder; color:#333; margin-bottom:10px;">
+                                ${pic.description}
+                            </div>
+                        </c:if>
                     </c:forEach>
                 </c:if>
                 <%--<div id="myCarousel" class="carousel slide">
