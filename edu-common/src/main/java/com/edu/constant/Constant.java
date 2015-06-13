@@ -35,6 +35,8 @@ public class Constant {
 		public final static String XYFG = "XYFG";
 		@ConstantDesc(groupName = "PictureCategory", descValue = "校企合作")
 		public final static String XQHZ = "XQHZ";
+		@ConstantDesc(groupName = "PictureCategory", descValue = "收费标准")
+		public final static String SFBZ = "SFBZ";
 		@ConstantDesc(groupName = "PictureCategory", descValue = "学校首页展示")
 		public final static String SYZS = "SYZS";
 	}

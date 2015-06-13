@@ -236,7 +236,8 @@
   
   <select id="findBySchoolAndCate" resultMap="BaseResultMap" parameterType="map" >
     select 
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_List" />,
+    <include refid="Blob_Column_List" />
     from newsdetail
     where schoolId = #{schoolId,jdbcType=INTEGER}
     and cate = #{cate,jdbcType=VARCHAR}
