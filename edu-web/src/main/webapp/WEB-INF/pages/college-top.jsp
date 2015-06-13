@@ -7,7 +7,7 @@
             <span class="college-hl-link">
                 <a href="${ctx}/">网站首页</a> |
                 <a href="#">加入收藏</a> |
-                <a href="#">设为主页</a> |
+                <a href="#">设为主页</a>
             </span>
     </div>
 </div>
@@ -40,7 +40,7 @@
 </div>
 <div class="c-main-img college-center">
     <%--<img src="${ctx}/resources/images/tianyiimg.jpg" />--%>
-    <img src="${ctx}/resources/images/${syzs}" />
+    <img src="${ctx}/resources/images/${syzs.path}" />
 </div>
 
 <%--浮动联系框--%>

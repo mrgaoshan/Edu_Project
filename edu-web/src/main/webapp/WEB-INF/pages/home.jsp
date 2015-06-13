@@ -79,7 +79,7 @@ function submitForm(){
             <span class="index-hl-link">
                 <a href="${ctx}/">网站首页</a> |
                 <a href="#" onclick="bookmark();">加入收藏</a> |
-                <a href="#" onclick="saveHome();">设为主页</a> |
+                <a href="#" onclick="saveHome();">设为主页</a>
             </span>
         </div>
     </div>

@@ -88,7 +88,7 @@ body{ font-family:"Microsoft YaHei","lucida Grande",Verdana; background:url(../i
 .c-index-contact label{ width:71px; display:block; float:left; margin-right:10px; }
 .c-index-contact span{ width:160px; display:block; float:left; margin-right:10px; }
 
-.c-index-images{border-top: 2px solid #0065b3; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; height:200px; margin-top:20px;}
+.c-index-images{border-top: 2px solid #0065b3; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; height:230px; margin-top:20px;}
 .c-index-images ul{ margin:10px; list-style:none; padding:0px;}
 .c-index-images ul li{ float:left; width:170px; height:150px; margin:0px 10px; cursor:pointer; border:1px solid #ddd; background:#fff; padding:0px; overflow:hidden;}
 .c-index-images ul li p{ background:#848484; color:#fff; line-height:20px; height:20px; text-align:center;}

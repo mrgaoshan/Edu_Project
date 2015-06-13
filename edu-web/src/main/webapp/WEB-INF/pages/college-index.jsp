@@ -85,44 +85,61 @@ pageEncoding="UTF-8"%>
             </div>
         </div>
     </div>
+
+    <style>
+        .movebox{ width:200px; height:180px; overflow:hidden; border:1px solid #ddd; background:#fff; cursor:pointer;}
+        .movebox p{ margin:0px 8px; padding:0px;}
+        .moveimg{ display:block; width:200px; height:150px; overflow:hidden;}
+        .moveimg img{ width:200px; height:150px;}
+        .movetitle{ background:#ddd; height:30px; display:block; width:200px; color:#000; line-height:30px; text-align:center;}
+    </style>
+
     <div class="college-center c-index-images">
     	<p class="c-i-m-c-t"><span>证书展示</span></p>
-    	<%--<ul>
-        	<li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-        </ul>--%>
         <c:if test="${zszsList != null}">
-            <ul>
-                <c:forEach items="${zszsList}" var="zszs">
-                    <li class="">
-                        <img src="${ctx}/resources/images/${zszs.path}" />
-                        <p>${zszs.description}</p>
-                    </li>
-                </c:forEach>
-            </ul>
+        <div id="gpica" style="overflow:hidden; width:950px; height:182px; margin:0 auto;">
+            <table border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td id="gpic1a" valign="top" align="center"><table width="974" border="0" align='center' cellpadding="0" cellspacing="0">
+                        <tr>
+                            <c:forEach items="${zszsList}" var="zszs">
+                                <td height="150">
+                                    <div class="movebox">
+                                        <p class="moveimg"><img src="${ctx}/resources/images/${zszs.path}"></p>
+                                        <p class="movetitle">${zszs.description}</p>
+                                    </div>
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </table>
+                    </td>
+                    <td id="gpic2a" valign="top"></td>
+                </tr>
+            </table>
+        </div>
         </c:if>
     </div>
     <div class="college-center c-index-images">
     	<p class="c-i-m-c-t"><span>校企合作</span></p>
-        <c:if test="${xqhzList != null}">
+        <div id="gpicb" style="overflow:hidden; width:950px; height:182px; margin:0 auto; display: none;">
+            <table border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td id="gpic1b" valign="top" align="center"><table width="974" border="0" align='center' cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td height="150">
+                                <div class="movebox">
+                                    <p class="moveimg"><img src="images/imgcase.jpg"></p>
+                                    <p class="movetitle">这是标题</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    </td>
+                    <td id="gpic2b" valign="top"></td>
+                </tr>
+            </table>
+        </div>
+        <%--<c:if test="${xqhzList != null}">
             <ul>
                 <c:forEach items="${xqhzList}" var="xqhz">
                     <li class="">
@@ -131,65 +148,79 @@ pageEncoding="UTF-8"%>
                     </li>
                 </c:forEach>
             </ul>
-        </c:if>
-    	<%--<ul>
-        	<li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-        </ul>--%>
+        </c:if>--%>
     </div>
     <div class="college-center c-index-images">
     	<p class="c-i-m-c-t"><span>校园风光</span></p>
-    	<%--<ul>
-        	<li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-            <li class="">
-            	<img src="${ctx}/resources/images/imgcase.jpg" />
-                <p>图片名称</p>
-            </li>
-        </ul>--%>
         <c:if test="${xyfgList != null}">
-        <ul>
-            <c:forEach items="${xyfgList}" var="xyfg">
-                <li class="">
-                    <img src="${ctx}/resources/images/${xyfg.path}" />
-                    <p>${xyfg.description}</p>
-                </li>
-            </c:forEach>
-        </ul>
+        <div id="gpicc" style="overflow:hidden; width:950px; height:182px; margin:0 auto;">
+            <table border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td id="gpic1c" valign="top" align="center"><table width="974" border="0" align='center' cellpadding="0" cellspacing="0">
+                        <tr>
+                            <c:forEach items="${xyfgList}" var="xyfg">
+                                <td height="150">
+                                    <div class="movebox">
+                                        <p class="moveimg"><img src="${ctx}/resources/images/${xyfg.path}"></p>
+                                        <p class="movetitle">${xyfg.description}</p>
+                                    </div>
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </table>
+                    </td>
+                    <td id="gpic2c" valign="top"></td>
+                </tr>
+            </table>
+        </div>
         </c:if>
     </div>
     <jsp:include page="./college-bottom.jsp" />
 </body>
+
+<script>
+    var speed=30;
+    gpic2a.innerHTML=gpic1a.innerHTML;
+    function Marqueea(){
+        if(gpic2a.offsetWidth-gpica.scrollLeft<=0)
+            gpica.scrollLeft-=gpic1a.offsetWidth;
+        else{
+            gpica.scrollLeft++;
+        }
+    }
+    var MyMara=setInterval(Marqueea,speed);
+    gpica.onmouseover=function() {clearInterval(MyMara)}
+    gpica.onmouseout=function() {MyMara=setInterval(Marqueea,speed)}
+
+
+
+    var speedb=30;
+    gpic2b.innerHTML=gpic1b.innerHTML
+    function Marqueeb(){
+        if(gpic2b.offsetWidth-gpicb.scrollLeft<=0)
+            gpicb.scrollLeft-=gpic1b.offsetWidth
+        else{
+            gpicb.scrollLeft++
+        }
+    }
+    var MyMarb=setInterval(Marqueeb,speedb)
+    gpicb.onmouseover=function() {clearInterval(MyMarb)}
+    gpicb.onmouseout=function() {MyMarb=setInterval(Marqueeb,speedb)}
+
+
+
+    var speedc=30;
+    gpic2c.innerHTML=gpic1c.innerHTML
+    function Marqueec(){
+        if(gpic2c.offsetWidth-gpicc.scrollLeft <= 0)
+            gpicc.scrollLeft-=gpic1c.offsetWidth
+        else{
+            gpicc.scrollLeft++
+        }
+    }
+    var MyMarc=setInterval(Marqueec,speedc)
+    gpicc.onmouseover=function() {clearInterval(MyMarc)}
+    gpicc.onmouseout=function() {MyMarc=setInterval(Marqueec,speedc)}
+
+</script>
 </html>
