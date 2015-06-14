@@ -21,6 +21,10 @@ public class Registration extends BaseAppTO{
     private Long phone;
 
     private Long qq;
+    
+    private String schoolname;
+    
+    private String majorname;
 
     public Integer getId() {
         return id;
@@ -77,4 +81,20 @@ public class Registration extends BaseAppTO{
     public void setQq(Long qq) {
         this.qq = qq;
     }
+
+	public String getSchoolname() {
+		return schoolname;
+	}
+
+	public void setSchoolname(String schoolname) {
+		this.schoolname = schoolname;
+	}
+
+	public String getMajorname() {
+		return majorname;
+	}
+
+	public void setMajorname(String majorname) {
+		this.majorname = majorname;
+	}
 }

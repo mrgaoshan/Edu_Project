@@ -5,6 +5,8 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="schoolId" property="schoolid" jdbcType="INTEGER" />
     <result column="majorId" property="majorid" jdbcType="INTEGER" />
+    <result column="majorname" property="majorname" />
+    <result column="schoolname" property="schoolname" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="gender" property="gender" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="BIGINT" />
@@ -108,4 +110,23 @@
       qq = #{qq,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="totalNum" resultType="java.lang.Integer">
+  	select count(*) from registration
+  </select>
+  <select id="pageList" parameterType="com.edu.model.bean.Pager" resultMap="BaseResultMap">
+  	select 
+		r.id id,
+		s.`name` schoolname,
+		m.`name` majorname,
+		r.`name` name,
+		r.gender gender,
+		r.phone phone,
+		r.qq qq
+	from registration r left join school s
+	on r.schoolId = s.id 
+	left join major m 
+	on r.majorId = m.id
+	order by r.id desc
+	limit #{startNum,jdbcType=INTEGER},#{endNum,jdbcType=INTEGER}
+  </select>
 </mapper>

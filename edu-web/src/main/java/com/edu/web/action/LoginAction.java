@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import com.edu.model.bean.LoginUser;
 import com.edu.model.service.AdminService;
 import com.edu.util.RequestUtil;
 
@@ -37,13 +38,15 @@ public class LoginAction {
 
     @RequestMapping(value="/usrLogin.do",method=RequestMethod.POST)
     @ResponseBody
-    public boolean login(@RequestParam(value="username") String usr, @RequestParam(value="password") String pwd){
+    public boolean login(@RequestParam(value="username") String usr, @RequestParam(value="password") String pwd, HttpServletRequest request){
 		try {
 			Properties prop = new Properties();
 	        String filePath = RequestUtil.getResourcePath("resource.properties");
 			prop.load(new FileInputStream(new File(filePath)));
             String adminpass = prop.getProperty("A001");
             if("administrator".equalsIgnoreCase(usr) && adminpass.equals(pwd)){
+            	LoginUser loginUser = new LoginUser(usr, pwd);
+            	request.getSession().setAttribute("loginUser", loginUser);
         		return true;
         	}
 		} catch (Exception e) {
@@ -63,10 +66,10 @@ public class LoginAction {
         return new ModelAndView("");
     }
 
-    @RequestMapping(value="/logout")
+    @RequestMapping(value="/logout.do")
     public String logout(HttpServletRequest request){
         request.getSession().removeAttribute("loginUser");
-        return "redirect:/login";
+        return "redirect:/login.do";
     }
 
 }
