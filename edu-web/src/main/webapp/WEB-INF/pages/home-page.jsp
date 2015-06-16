@@ -89,19 +89,19 @@ function saveHome(){
     	<div class="index-center">
         	<a href="${ctx}/">首页</a>
             <span></span>
-            <a href="school/index/1.do">四川天一学校</a>
+            <a href="school/index/1.do" target="_blank">四川天一学校</a>
             <span></span>
-            <a href="school/index/5.do">五月花专修学院</a>
+            <a href="school/index/5.do" target="_blank">五月花专修学院</a>
             <span></span>
-            <a href="school/index/4.do">成都机电工程学校</a>
+            <a href="school/index/4.do" target="_blank">成都机电工程学校</a>
             <span></span>
-            <a href="school/index/2.do">成都信息技术学校</a>
+            <a href="school/index/2.do" target="_blank">成都信息技术学校</a>
             <span></span>
-            <a href="school/index/3.do">电大商贸管理学院</a>
+            <a href="school/index/3.do" target="_blank">电大商贸管理学院</a>
             <span></span>
-            <a href="school/index/6.do">四川化工高级技学校</a>
+            <a href="school/index/6.do" target="_blank">四川化工高级技学校</a>
             <span></span>
-             <a href="viewNews.do?id=46">联系我们</a> 
+             <a href="viewNews.do?id=46" >联系我们</a> 
         </div>
     </div>
   

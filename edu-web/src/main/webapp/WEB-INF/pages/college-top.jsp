@@ -32,7 +32,7 @@
         <li><a href="${ctx}/school/major/${sch.id}.do">专业设置</a></li>
         <li><a href="${ctx}/school/news/${sch.id}.do">校园新闻</a></li>
         <li><a href="${ctx}/school/scenery/${sch.id}.do">校园风光</a></li>
-        <li><a href="${ctx}/school/about/${sch.id}.do">就业中心</a></li>
+        <li><a href="${ctx}/school/jodDetail/${sch.id}.do">就业中心</a></li>
         <li><a href="${ctx}/school/fee/${sch.id}.do">收费标准</a></li>
         <!-- <li><a href="#">在线报名</a></li> -->
         <li><a href="${ctx}/school/contact/${sch.id}.do">联系方式</a></li>
@@ -50,18 +50,21 @@
     </p>
     <c:if test="${sch.id == 1}">
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
-    </p>
-    <p style=" margin:3px 0px; text-align:center;">
         <a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
+    <p style=" margin:3px 0px; text-align:center;">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+    </p>
     </c:if>
+     <c:if test="${sch.id != 1}">
     <p style=" margin:3px 0px; text-align:center;">
         <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
+     </c:if>
     <p style="margin:15px 0px 0px 0px ; padding:5px; border-top:1px solid #ddd;">
-        如需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;">189-0800-5536</span>
+        如需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;"><c:if test="${sch.id == 1}">13880408679</c:if><c:if test="${sch.id != 1}">13550030325</c:if></span>
     </p>
+  
 </div>
 
 <script>

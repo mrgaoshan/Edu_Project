@@ -81,7 +81,7 @@ pageEncoding="UTF-8"%>
                 <%--<div><label>传真号码：</label><span>028-12345678</span></div>--%>
                 <div><label>电子邮件：</label><span>${sch.email}</span></div>
                 <div><label>在线Q Q：</label><span>${sch.qq}</span></div>
-                <div><label>公司地址：</label><span>${sch.address}</span></div>
+                <div><label>学校地址：</label><span>${sch.address}</span></div>
             </div>
         </div>
     </div>

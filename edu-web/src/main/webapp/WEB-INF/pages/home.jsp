@@ -91,17 +91,17 @@ function submitForm(){
     	<div class="index-center">
             <a href="${ctx}/">首页</a>
             <span></span>
-            <a href="school/index/1.do">四川天一学校</a>
+            <a href="school/index/1.do" target="_blank">四川天一学校</a>
             <span></span>
-            <a href="school/index/5.do">五月花专修学院</a>
+            <a href="school/index/5.do" target="_blank">五月花专修学院</a>
             <span></span>
-            <a href="school/index/4.do">成都机电工程学校</a>
+            <a href="school/index/4.do" target="_blank">成都机电工程学校</a>
             <span></span>
-            <a href="school/index/2.do">成都信息技术学校</a>
+            <a href="school/index/2.do" target="_blank">成都信息技术学校</a>
             <span></span>
-            <a href="school/index/3.do">电大商贸管理学院</a>
+            <a href="school/index/3.do" target="_blank">电大商贸管理学院</a>
             <span></span>
-            <a href="school/index/6.do">四川化工高级技学校</a>
+            <a href="school/index/6.do" target="_blank">四川化工高级技学校</a>
             <span></span>
             <a href="viewNews.do?id=46">联系我们</a> 
         </div>
@@ -317,11 +317,11 @@ function submitForm(){
             	<span class="in1">友情链接</span>
                 <span class="in2">Links</span>
             </p>
-            <div class="index-link-c">
-            	<a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+            <div class="index-link-c" style="line-height:50px">
+            	<a href="http://www.scedu.net" target="_blank" style="margin-left:30px">四川教育厅</a>
+                <a href="http://www.sceea.cn" target="_blank" style="margin-left:30px">四川教育考试院</a>
+                <a href="http://www.tfzikao.com" target="_blank" style="margin-left:30px">成人自考网</a>
+                <a href="http://www.sczsxx.com" target="_blank" style="margin-left:30px">四川高考招考</a>
             </div>
         </div>
         <div class="btinfo">
@@ -338,17 +338,17 @@ function submitForm(){
     </p>
     
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=3787233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     <p style="margin:15px 0px 0px 0px ; padding:5px; border-top:1px solid #ddd;">
-        如需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;">189-0800-5536</span>
+        如需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;">13550030325</span>
     </p>
 </div>
 

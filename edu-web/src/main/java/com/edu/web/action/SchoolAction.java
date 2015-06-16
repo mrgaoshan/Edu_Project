@@ -211,5 +211,22 @@ public class SchoolAction {
         model.addAttribute("syzs", syzsList != null && syzsList.size() > 0 ? syzsList.get(0) : null);
         model.addAttribute("logo", school.getLogo());
     }
+    
+    
+    /**
+     * 就业中心
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("/jodDetail/{id}")
+    public String jodDetail(Model model, @PathVariable Integer id){
+    	 School school = (School) schoolService.selectByPrimaryKey(id);
+
+         model.addAttribute("content", school.getDemand());
+         setTopInfo(model, id);
+         
+         return "college-page";
+    }
 
 }

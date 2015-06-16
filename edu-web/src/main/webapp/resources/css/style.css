@@ -13,7 +13,7 @@ body{ font-family:"Microsoft YaHei","lucida Grande",Verdana; background:url(../i
 .index-tel{ float:right; margin:20px;}
 .index-nav{ background:url(../images/navbg.jpg) repeat-x; height:44px; line-height:44px;}
 .index-nav span{ display:block; width:2px; background:url(../images/navfgbg.jpg); float:left; height:44px;}
-.index-nav a{ float:left; display:block; margin:0px 23px; color:#fff; height:44px; font-size:14px; }
+.index-nav a{ float:left; display:block; margin:0px 15px; color:#fff; height:44px; font-size:14px; }
 .index-lb{ width:690px; float:left;}
 .index-lb-form{ height:343px; overflow:hidden;}
 
@@ -34,7 +34,7 @@ body{ font-family:"Microsoft YaHei","lucida Grande",Verdana; background:url(../i
 }
 .zsjz-c li a,.index-news-c li a{ margin-left:12px; line-height:25px; color:#333;}
 .index-college-title{ background:url(../images/collegebg.png) 16px 0px no-repeat #eeeeee; height:40px; line-height:40px; border-bottom:1px solid #ddd;}
-.index-college-title span{ margin-left:55px; font-weight:bold; font-size:14px;}
+.index-college-title span{ margin-left:55px; font-weight:bold; font-size:20px; font-family:楷体; color:#055a91}
 .index-college{ border:1px solid #ddd; padding:0px; width:49%; margin-bottom:20px; background:#f5f5f5;}
 .index-left{ float:left;}
 .index-right{ float:right;}
@@ -42,8 +42,10 @@ body{ font-family:"Microsoft YaHei","lucida Grande",Verdana; background:url(../i
 .index-college-img{ float:left; margin-left:20px; margin-top:20px; margin-bottom:20px; width:180px; border:1px solid #ddd}
 .index-college-content{ float:left; margin-left:10px; margin-top:20px; margin-bottom:20px; width:260px; font-size:14px; line-height:20px;}
 .index-college-content p{ margin:2px;}
+.index-college a:hover{ text-decoration:none;}
 .index-news{ height:200px;}
-.index-news .col-lg-4{ padding:0px;}
+.index-news .col-lg-4{ padding:0px; width:33.333%; float:left;}
+.c-index-main .col-lg-4{ width:33.333%; float:left;}
 .index-news-c{ border-top:2px solid #0065b3; border-left:1px solid #ddd; border-right:1px solid #ddd; border-bottom:1px solid #ddd; margin-right:10px; width:323px; height:200px; overflow:hidden;}
 .index-news-c p,.index-link p{ background:#f2f2f2; line-height:24px; border-bottom:1px solid #ddd; margin:0px;}
 .in1{ margin-left:5px; font-size:14px; color:#333; font-weight:bold;}
