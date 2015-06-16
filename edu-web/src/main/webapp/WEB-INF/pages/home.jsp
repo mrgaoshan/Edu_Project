@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
-<title>升学网</title>
+<title>升学选校网</title>
 
 	<link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
 	<link href="${ctx}/resources/css/style.css" rel="stylesheet" />
@@ -326,9 +326,10 @@ function submitForm(){
         </div>
         <div class="btinfo">
         	<div class="index-center">
-            	全国报名电话：02812345678 24小时服务热线：400-2154-124
-               	©2015 成都升学选校网（WWW.SHENXXX.COM)版权所有 
-            </div>
+      报名热线：028-89766786 联系老师：程老师 联系手机：13880408679 13550030325 QQ咨询：<a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
+	<a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
+      ©2015 成都升学选校网 版权所有
+    </div>
         </div>
 
 <%--浮动联系框--%>
