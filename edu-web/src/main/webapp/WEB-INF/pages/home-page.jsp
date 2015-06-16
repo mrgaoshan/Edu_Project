@@ -101,7 +101,7 @@ function saveHome(){
             <span></span>
             <a href="school/index/6.do">四川化工高级技学校</a>
             <span></span>
-           <!--  <a href="#">在线报名</a> -->
+          <a href="viewNews.do?id=46">联系我们</a> 
         </div>
     </div>
   
