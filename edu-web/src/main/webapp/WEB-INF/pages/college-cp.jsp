@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
-<title>升学网-${sch.name}</title>
+<title>升学选校网-${sch.name}</title>
     <link rel="shortcut icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" />
     <link href="${ctx}/resources/css/style.css" rel="stylesheet" />
