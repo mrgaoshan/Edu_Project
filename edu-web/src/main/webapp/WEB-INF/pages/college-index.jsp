@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -119,9 +119,9 @@ pageEncoding="UTF-8"%>
         </div>
         </c:if>
     </div>
-    <div class="college-center c-index-images">
+    <div class="college-center c-index-images" style="display: none;">
     	<p class="c-i-m-c-t"><span>校企合作</span></p>
-        <div id="gpicb" style="overflow:hidden; width:950px; height:182px; margin:0 auto; display: none;">
+        <div id="gpicb" style="overflow:hidden; width:950px; height:182px; margin:0 auto;">
             <table border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                     <td id="gpic1b" valign="top" align="center"><table width="974" border="0" align='center' cellpadding="0" cellspacing="0">

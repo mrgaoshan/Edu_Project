@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -89,21 +89,21 @@ function submitForm(){
     </div>
     <div class="index-nav">
     	<div class="index-center">
-        	<a href="${ctx}/">首页</a>
+            <a href="${ctx}/">首页</a>
             <span></span>
-            <a href="school/index/1.do">天一学校</a>
+            <a href="school/index/1.do">四川天一学校</a>
+            <span></span>
+            <a href="school/index/5.do">五月花专修学院</a>
+            <span></span>
+            <a href="school/index/4.do">成都机电工程学校</a>
             <span></span>
             <a href="school/index/2.do">成都信息技术学校</a>
             <span></span>
-            <a href="school/index/3.do">商贸管理学校</a>
-            <span></span>
-            <a href="school/index/4.do">机电工程学校</a>
-            <span></span>
-            <a href="school/index/5.do">五月花学校</a>
+            <a href="school/index/3.do">电大商贸管理学院</a>
             <span></span>
             <a href="school/index/6.do">四川化工高级技学校</a>
             <span></span>
-          	<a href="viewNews.do?id=46">联系我们</a> 
+            <a href="viewNews.do?id=46">联系我们</a> 
         </div>
     </div>
     <div class="index-lb-form index-center">
@@ -127,10 +127,20 @@ function submitForm(){
         </div>
         <div class="index-form">
   			<div class="c-index-m-f" style="height:332px;">
-            	<p class="c-i-m-f-t" style="text-align:center; height:35px; line-height:35px; font-size:16px">在线报名</p>
+            	<p class="c-i-m-f-t" style="text-align:center; height:30px; line-height:30px; font-size:16px">在线报名</p>
+		<p class="c-i-m-f-t  c-i-form-show" style="text-align:left;  line-height:22px; font-size:14px; color:red;margin-top: -10px;border-bottom: none;background: #e3ffce;">
+   		 1、请各位同学认真填写以下报名信息。<br>
+    		 2、本次报名不会影响你的填报志愿。<br>
+   		 3、多一份选择，多一份希望。
+ 		 </p>
             	<form method="post" id="registForm" action="" class="zxbm">
-                	<p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">您的名称：</label><input type="text" name="name"  style=" font-size:14px;" class="fdfinput" placeholder="输入名称" /></p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名学校：</label><select style=" font-size:14px;" name="schoolid" class="fdfinput" onchange="changeShool(this)">
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">您的姓名：</label><input type="text" name="name"  style=" font-size:14px;" class="fdfinput" placeholder="输入您的姓名" /></p>
+		    <p style=" font-size:14px;"><label style="width:70px; font-size:14px;">性   别：</label>男：<input style=" font-size:14px;" type="radio" name="gender" value="male" />&nbsp;&nbsp;
+                                           女：<input style=" font-size:14px;" type="radio" name="gender" value="female" />
+                    </p>
+
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">出生日期：</label><input style=" font-size:14px;" type="text" name="birthday" placeholder="yyyymmdd" class="fdfinput" /></p>
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">预报学校：</label><select style=" font-size:14px;" name="schoolid" class="fdfinput" onchange="changeShool(this)">
                     							  <option value="0" selected="selected">---选择学校---</option>
                     							 <c:forEach items="${schoolsList}" var="item">
                     							  <option value="${item.id}">${item.name} </option>
@@ -138,18 +148,15 @@ function submitForm(){
                     							     
                                               </select>
                     </p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">报名专业：</label><select style=" font-size:14px;" name="majorid" class="fdfinput" id="majorList">
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">预报专业：</label><select style=" font-size:14px;" name="majorid" class="fdfinput" id="majorList">
                     						 	 <option value="0" selected="selected">---选择专业---</option>
                                                
                                               </select>
                     </p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">联系方式：</label><input style=" font-size:14px;" type="text" name="phone" class="fdfinput" placeholder="输入联系方式" /></p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">您的Q Q：</label><input style=" font-size:14px;" type="text" name="qq" class="fdfinput"  placeholder="输入数字"/></p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;">出生日期：</label><input style=" font-size:14px;" type="text" name="birthday" placeholder="yyyymmdd" class="fdfinput" /></p>
-                    <p style=" font-size:14px;"><label style="width:70px; font-size:14px;">性   别：</label>男：<input style=" font-size:14px;" type="radio" name="gender" value="male" />
-                                           女：<input style=" font-size:14px;" type="radio" name="gender" value="female" />
-                    </p>
-                    <p style="margin-bottom:12px;"><label style="width:70px; font-size:14px;"></label><input type="button" style=" font-size:14px;" class="submit" value="提交" onclick="submitForm()"/></p>
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">联系电话：</label><input style=" font-size:14px;" type="text" name="phone" class="fdfinput" placeholder="输入联系方式" /></p>
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">您的Q Q：</label><input style=" font-size:14px;" type="text" name="qq" class="fdfinput"  placeholder="输入数字"/></p>
+                    
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;"></label><input type="button" style=" font-size:14px;" class="submit" value="提交" onclick="submitForm()"/></p>
                 </form>
             </div>
         </div>
@@ -198,63 +205,64 @@ function submitForm(){
         </div>
     <div class="index-center index-college-box ">
         <div class="col-lg-6 index-college index-left">
-            <p class="index-college-title"><span>天一学校</span></p>
-            <div class="index-college-img"><img src="${ctx}/resources/images/btyxx.jpg" /></div>
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/1.do">四川天一学校</a></span></p>
+            <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/1.do"><img src="${ctx}/resources/images/btyxx.jpg" /></a></div>
             <div class="index-college-content">
-                <p><strong>招生专业：</strong>电子工程、航空服务、电子商务专业、会计专业、计算机及应用、建筑专业、旅游管理等</p>
+                <a href="http://www.shenxxx.com/school/index/1.do"><p><strong>招生专业：</strong>电子工程、航空服务、电子商务专业、会计专业、计算机及应用、建筑专业、旅游管理等</p>
                 <p><strong>招生层次：</strong>中专、大专、本科</p>
                 <p><strong>所有费用：</strong>8200元/年</p>
-                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p></a>
             </div>
         </div>
-        <div class="col-lg-6 index-college index-right">
-            <p class="index-college-title"><span>成都信息技术学校</span></p>
-            <div class="index-college-img"><img src="${ctx}/resources/images/bcdxxjsxx.jpg" /></div>
-            <div class="index-college-content">
-                <p><strong>招生专业：</strong>医护管理、计算机信息管理、艺术设计、机电专业、司法警察、航空服务、教育管理等</p>
-                <p><strong>招生层次：</strong>中专、大专、本科</p>
-                <p><strong>所有费用：</strong>5000元/年</p>
-                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-            </div>
-        </div>
-        <div class="col-lg-6 index-college index-left">
-            <p class="index-college-title"><span>商贸管理学校</span></p>
-            <div class="index-college-img"><img src="${ctx}/resources/images/bschggjjgxx.jpg" /></div>
-            <div class="index-college-content">
-                <p><strong>招生专业：</strong>电信通讯、动漫、广告设计、建筑工程、经济管理、旅游专业、汽车工程、学前教育、小学教育等</p>
-                <p><strong>招生层次：</strong>中专、大专、本科</p>
-                <p><strong>所有费用：</strong>8200元/年</p>
-                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-            </div>
-        </div>
-        <div class="col-lg-6 index-college index-right">
-            <p class="index-college-title"><span>机电工程学校</span></p>
-            <div class="index-college-img"><img src="${ctx}/resources/images/bcdjdgcxx.jpg" /></div>
-            <div class="index-college-content">
-                <p><strong>招生专业：</strong>阿联酋航空公司-迪拜国际机场航空服务人才定制班、触控技术人才定制班、海航动车高铁乘务人才定制班等</p>
-                <p><strong>招生层次：</strong>中专、大专、本科</p>
-                <p><strong>所有费用：</strong>8200元/年</p>
-                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
-            </div>
-        </div>
-        <div class="col-lg-6 index-college index-left">
-            <p class="index-college-title"><span>五月花学校</span></p>
-            <div class="index-college-img"><img src="${ctx}/resources/images/bwyh.jpg" /></div>
-            <div class="index-college-content">
+	<div class="col-lg-6 index-college index-right">
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/5.do">五月花专修学校</span></a></p>
+            <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/5.do"><img src="${ctx}/resources/images/bwyh.jpg" /></a></div>
+            <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/5.do">
                 <p><strong>招生专业：</strong>财务会计、电子商务、服装设计、航空服务、护理专业、旅游管理、烹饪专业、汽车全能技师等</p>
                 <p><strong>招生层次：</strong>中专、大专、本科</p>
                 <p><strong>所有费用：</strong>8200元/年</p>
-                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p></a>
+            </div>
+        </div>
+	<div class="col-lg-6 index-college index-left">
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/4.do">成都机电工程学校</span></a></p>
+            <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/4.do"><img src="${ctx}/resources/images/bcdjdgcxx.jpg" /></a></div>
+            <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/4.do">
+                <p><strong>招生专业：</strong>阿联酋航空公司-迪拜国际机场航空服务人才定制班、触控技术人才定制班、海航动车高铁乘务人才定制班等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>8200元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p></a>
             </div>
         </div>
         <div class="col-lg-6 index-college index-right">
-            <p class="index-college-title"><span>四川化工高级技工学校</span></p>
-            <div class="index-college-img"><img src="${ctx}/resources/images/index-college-img.jpg" /></div>
-            <div class="index-college-content">
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/2.do">成都信息技术学校</a></span></p>
+            <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/2.do"><img src="${ctx}/resources/images/bcdxxjsxx.jpg" /></a></div>
+            <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/2.do">
+                <p><strong>招生专业：</strong>医护管理、计算机信息管理、艺术设计、机电专业、司法警察、航空服务、教育管理等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>5000元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p></a>
+            </div>
+        </div>
+        <div class="col-lg-6 index-college index-left">
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/3.do">电大商贸管理学院</a></span></p>
+            <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/3.do"><img src="${ctx}/resources/images/bschggjjgxx.jpg" /></a></div>
+            <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/3.do">
+                <p><strong>招生专业：</strong>电信通讯、动漫、广告设计、建筑工程、经济管理、旅游专业、汽车工程、学前教育、小学教育等</p>
+                <p><strong>招生层次：</strong>中专、大专、本科</p>
+                <p><strong>所有费用：</strong>8200元/年</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p></a>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 index-college index-right">
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/6.do">四川化工高级技工学校</a></span></p>
+            <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/6.do"><img src="${ctx}/resources/images/index-college-img.jpg" /></a></div>
+            <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/6.do">
                 <p><strong>招生专业：</strong>电子商务、工程造价、工商企业管理、化工分析与检验、会计专业、计算机软件设计、计算机网络技术等</p>
                 <p><strong>招生层次：</strong>中专、大专、本科</p>
                 <p><strong>所有费用：</strong>8200元/年</p>
-                <p><strong>招生对象：</strong>初中生、高中生、职高生</p>
+                <p><strong>招生对象：</strong>初中生、高中生、职高生</p></a>
             </div>
         </div>
     </div>
@@ -322,5 +330,34 @@ function submitForm(){
                	©2015 成都升学选校网（WWW.SHENXXX.COM)版权所有 
             </div>
         </div>
+
+<%--浮动联系框--%>
+<div style="width:163px; height:auto; position:fixed; right:0px; z-index: 999999; top:50%; margin-top:-80px; padding-bottom:10px; border:1px solid #999; background:#fff" id="qqck">
+    <p style=" line-height:33px; background:url(${ctx}/resources/images/qqtitlebg.jpg) repeat-x; color:#fff; padding-left:12px; margin-bottom:15px;">在线客服
+        <a href="javascript:void(0)" style="color:#fff; float:right; margin-right:10px; text-decoration:none;" id="qqckclose">×</a>
+    </p>
+    
+    <p style=" margin:3px 0px; text-align:center;">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+    </p>
+    <p style=" margin:3px 0px; text-align:center;">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+    </p>
+    
+    <p style=" margin:3px 0px; text-align:center;">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3787233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+    </p>
+    <p style="margin:15px 0px 0px 0px ; padding:5px; border-top:1px solid #ddd;">
+        如需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;">189-0800-5536</span>
+    </p>
+</div>
+
+<script>
+    $(document).ready(function(e) {
+        $("#qqckclose").click(function(e) {
+            $("#qqck").hide();
+        });
+    });
+</script>
 </body>
 </html>
