@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="${ctx}/resources/js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${ctx}/resources/js/js.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
 </head>
 
 <script>
@@ -103,7 +104,7 @@ function saveHome(){
             <span></span>
             <a href="school/index/6.do" target="_blank">四川化工高级技工学院</a>
             <span></span>
-             <!-- <a href="viewNews.do?id=46" >联系我们</a>  -->
+          	 <a href="viewNews.do?id=46" >联系我们</a>  
         </div>
     </div>
   
@@ -177,7 +178,7 @@ function saveHome(){
         <div class="index-center">
       报名热线：028-89766786 联系老师：陈老师 联系手机：18180788702 13550030325 QQ咨询：<a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
 	<a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
-      ©2015 成都升学选校网 版权所有 <a href="${ctx}/viewNews.do?id=46">关于我们</a>
+      ©2015 成都升学选校网 版权所有 <a href="${ctx}/viewNews.do?id=52">关于我们</a>
     </div>
     </div>
 </body>
