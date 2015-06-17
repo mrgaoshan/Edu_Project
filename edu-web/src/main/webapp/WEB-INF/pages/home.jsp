@@ -83,27 +83,29 @@ function submitForm(){
             </span>
         </div>
     </div>
-    <div class="index-center logo-tel">
+    <div style="background:url(${ctx}/resources/images/top-bg.png) no-repeat center;">
+    <div class="index-center logo-tel" >
     	<a href="#"><img src="${ctx}/resources/images/logo.png" class="index-logo" /></a>
         <img src="${ctx}/resources/images/tel.png" class="index-tel" />
+    </div>
     </div>
     <div class="index-nav">
     	<div class="index-center">
             <a href="${ctx}/">首页</a>
             <span></span>
-            <a href="school/index/1.do" target="_blank">四川天一学校</a>
+            <a href="school/index/1.do" target="_blank">四川天一学院</a>
             <span></span>
             <a href="school/index/5.do" target="_blank">五月花专修学院</a>
             <span></span>
             <a href="school/index/4.do" target="_blank">成都机电工程学校</a>
             <span></span>
-            <a href="school/index/2.do" target="_blank">成都信息技术学校</a>
+            <a href="school/index/2.do" target="_blank">成都信息技术学院</a>
             <span></span>
             <a href="school/index/3.do" target="_blank">电大商贸管理学院</a>
             <span></span>
-            <a href="school/index/6.do" target="_blank">四川化工高级技学校</a>
+            <a href="school/index/6.do" target="_blank">四川化工高级技工学院</a>
             <span></span>
-            <a href="viewNews.do?id=46">联系我们</a> 
+            <!-- <a href="viewNews.do?id=46">联系我们</a>  -->
         </div>
     </div>
     <div class="index-lb-form index-center">
@@ -139,7 +141,7 @@ function submitForm(){
                                            女：<input style=" font-size:14px;" type="radio" name="gender" value="female" />
                     </p>
 
-                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">出生日期：</label><input style=" font-size:14px;" type="text" name="birthday" placeholder="yyyymmdd" class="fdfinput" /></p>
+                    <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">出生日期：</label><input style=" font-size:14px;" type="text" name="birthday" placeholder="yyyy-mm-dd" class="fdfinput" /></p>
                     <p style="margin-bottom:3px;"><label style="width:70px; font-size:14px;">预报学校：</label><select style=" font-size:14px;" name="schoolid" class="fdfinput" onchange="changeShool(this)">
                     							  <option value="0" selected="selected">---选择学校---</option>
                     							 <c:forEach items="${schoolsList}" var="item">
@@ -205,7 +207,7 @@ function submitForm(){
         </div>
     <div class="index-center index-college-box ">
         <div class="col-lg-6 index-college index-left">
-            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/1.do">四川天一学校</a></span></p>
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/1.do">四川天一学院</a></span></p>
             <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/1.do"><img src="${ctx}/resources/images/btyxx.jpg" /></a></div>
             <div class="index-college-content">
                 <a href="http://www.shenxxx.com/school/index/1.do"><p><strong>招生专业：</strong>电子工程、航空服务、电子商务专业、会计专业、计算机及应用、建筑专业、旅游管理等</p>
@@ -215,7 +217,7 @@ function submitForm(){
             </div>
         </div>
 	<div class="col-lg-6 index-college index-right">
-            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/5.do">五月花专修学校</span></a></p>
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/5.do">五月花专修学院</span></a></p>
             <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/5.do"><img src="${ctx}/resources/images/bwyh.jpg" /></a></div>
             <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/5.do">
                 <p><strong>招生专业：</strong>财务会计、电子商务、服装设计、航空服务、护理专业、旅游管理、烹饪专业、汽车全能技师等</p>
@@ -225,7 +227,7 @@ function submitForm(){
             </div>
         </div>
 	<div class="col-lg-6 index-college index-left">
-            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/4.do">成都机电工程学校</span></a></p>
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/4.do">成都机电工程学院</span></a></p>
             <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/4.do"><img src="${ctx}/resources/images/bcdjdgcxx.jpg" /></a></div>
             <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/4.do">
                 <p><strong>招生专业：</strong>阿联酋航空公司-迪拜国际机场航空服务人才定制班、触控技术人才定制班、海航动车高铁乘务人才定制班等</p>
@@ -235,7 +237,7 @@ function submitForm(){
             </div>
         </div>
         <div class="col-lg-6 index-college index-right">
-            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/2.do">成都信息技术学校</a></span></p>
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/2.do">成都信息技术学院</a></span></p>
             <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/2.do"><img src="${ctx}/resources/images/bcdxxjsxx.jpg" /></a></div>
             <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/2.do">
                 <p><strong>招生专业：</strong>医护管理、计算机信息管理、艺术设计、机电专业、司法警察、航空服务、教育管理等</p>
@@ -256,7 +258,7 @@ function submitForm(){
         </div>
         
         <div class="col-lg-6 index-college index-right">
-            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/6.do">四川化工高级技工学校</a></span></p>
+            <p class="index-college-title"><span><a href="http://www.shenxxx.com/school/index/6.do">四川化工高级技工学院</a></span></p>
             <div class="index-college-img"><a href="http://www.shenxxx.com/school/index/6.do"><img src="${ctx}/resources/images/index-college-img.jpg" /></a></div>
             <div class="index-college-content"><a href="http://www.shenxxx.com/school/index/6.do">
                 <p><strong>招生专业：</strong>电子商务、工程造价、工商企业管理、化工分析与检验、会计专业、计算机软件设计、计算机网络技术等</p>
@@ -318,38 +320,41 @@ function submitForm(){
                 <span class="in2">Links</span>
             </p>
             <div class="index-link-c" style="line-height:50px">
-            	<a href="http://www.scedu.net" target="_blank" style="margin-left:30px">四川教育厅</a>
-                <a href="http://www.sceea.cn" target="_blank" style="margin-left:30px">四川教育考试院</a>
-                <a href="http://www.tfzikao.com" target="_blank" style="margin-left:30px">成人自考网</a>
-                <a href="http://www.sczsxx.com" target="_blank" style="margin-left:30px">四川高考招考</a>
+            	<a href="http://www.scedu.net" target="_blank" style="margin-left:40px">四川教育厅</a>
+                <a href="http://www.sceea.cn" target="_blank" style="margin-left:40px">四川教育考试院</a>
+                <a href="http://www.tfzikao.com" target="_blank" style="margin-left:40px">成人自考网</a>
+                <a href="http://www.sczsxx.com" target="_blank" style="margin-left:40px">四川高考招考</a>
+                <a href="http://www.scpta.gov.cn/" target="_blank" style="margin-left:40px">四川人事考试</a>
+                <a href="http://www.51test.net/gaokao/sichuan/xinwen/" target="_blank" style="margin-left:40px">四川高考信息网</a>
+                <a href="http://www.scsgk.com/" target="_blank" style="margin-left:40px">四川公考网</a>
             </div>
         </div>
         <div class="btinfo">
         	<div class="index-center">
-      报名热线：028-89766786 联系老师：程老师 联系手机：13880408679 13550030325 QQ咨询：<a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
+      报名热线：028-89766786 联系老师：陈老师 联系手机：18180788702 13550030325 QQ咨询：<a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
 	<a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
-      ©2015 成都升学选校网 版权所有
+      ©2015 成都升学选校网 版权所有 <a href="${ctx}/viewNews.do?id=46">关于我们</a>
     </div>
         </div>
 
 <%--浮动联系框--%>
 <div style="width:163px; height:auto; position:fixed; right:0px; z-index: 999999; top:50%; margin-top:-80px; padding-bottom:10px; border:1px solid #999; background:#fff" id="qqck">
-    <p style=" line-height:33px; background:url(${ctx}/resources/images/qqtitlebg.jpg) repeat-x; color:#fff; padding-left:12px; margin-bottom:15px;">在线客服
+    <p style=" line-height:33px; background:url(${ctx}/resources/images/qqtitlebg.jpg) repeat-x; color:#fff; padding-left:12px; margin-bottom:15px;">在线咨询
         <a href="javascript:void(0)" style="color:#fff; float:right; margin-right:10px; text-decoration:none;" id="qqckclose">×</a>
     </p>
     
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线咨询：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线咨询：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线咨询：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     <p style="margin:15px 0px 0px 0px ; padding:5px; border-top:1px solid #ddd;">
-        如需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;">13550030325</span>
+        急需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;">18180788702</span>
     </p>
 </div>
 

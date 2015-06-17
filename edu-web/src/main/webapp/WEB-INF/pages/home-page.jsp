@@ -81,27 +81,29 @@ function saveHome(){
             </span>
         </div>
     </div>
-    <div class="index-center logo-tel">
-        <a href="#"><img src="${ctx}/resources/images/logo.png" class="index-logo" /></a>
+   <div style="background:url(${ctx}/resources/images/top-bg.png) no-repeat center;">
+    <div class="index-center logo-tel" >
+    	<a href="#"><img src="${ctx}/resources/images/logo.png" class="index-logo" /></a>
         <img src="${ctx}/resources/images/tel.png" class="index-tel" />
+    </div>
     </div>
     <div class="index-nav">
     	<div class="index-center">
         	<a href="${ctx}/">首页</a>
             <span></span>
-            <a href="school/index/1.do" target="_blank">四川天一学校</a>
+            <a href="school/index/1.do" target="_blank">四川天一学院</a>
             <span></span>
             <a href="school/index/5.do" target="_blank">五月花专修学院</a>
             <span></span>
-            <a href="school/index/4.do" target="_blank">成都机电工程学校</a>
+            <a href="school/index/4.do" target="_blank">成都机电工程学院</a>
             <span></span>
-            <a href="school/index/2.do" target="_blank">成都信息技术学校</a>
+            <a href="school/index/2.do" target="_blank">成都信息技术学院</a>
             <span></span>
             <a href="school/index/3.do" target="_blank">电大商贸管理学院</a>
             <span></span>
-            <a href="school/index/6.do" target="_blank">四川化工高级技学校</a>
+            <a href="school/index/6.do" target="_blank">四川化工高级技工学院</a>
             <span></span>
-             <a href="viewNews.do?id=46" >联系我们</a> 
+             <!-- <a href="viewNews.do?id=46" >联系我们</a>  -->
         </div>
     </div>
   
@@ -161,18 +163,21 @@ function saveHome(){
             <span class="in1">友情链接</span>
             <span class="in2">Links</span>
         </p>
-        <div class="index-link-c">
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-        </div>
+       <div class="index-link-c" style="line-height:50px">
+            	<a href="http://www.scedu.net" target="_blank" style="margin-left:40px">四川教育厅</a>
+                <a href="http://www.sceea.cn" target="_blank" style="margin-left:40px">四川教育考试院</a>
+                <a href="http://www.tfzikao.com" target="_blank" style="margin-left:40px">成人自考网</a>
+                <a href="http://www.sczsxx.com" target="_blank" style="margin-left:40px">四川高考招考</a>
+                <a href="http://www.scpta.gov.cn/" target="_blank" style="margin-left:40px">四川人事考试</a>
+                <a href="http://www.51test.net/gaokao/sichuan/xinwen/" target="_blank" style="margin-left:40px">四川高考信息网</a>
+                <a href="http://www.scsgk.com/" target="_blank" style="margin-left:40px">四川公考网</a>
+       </div>
     </div>
     <div class="btinfo">
         <div class="index-center">
-      报名热线：028-89766786 联系老师：程老师 联系手机：13880408679 13550030325 QQ咨询：<a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
+      报名热线：028-89766786 联系老师：陈老师 联系手机：18180788702 13550030325 QQ咨询：<a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
 	<a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank"><img src="${ctx}/resources/images/qq_icon.gif"></a>
-      ©2015 成都升学选校网 版权所有
+      ©2015 成都升学选校网 版权所有 <a href="${ctx}/viewNews.do?id=46">关于我们</a>
     </div>
     </div>
 </body>

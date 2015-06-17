@@ -45,24 +45,24 @@
 
 <%--浮动联系框--%>
 <div style="width:163px; height:auto; position:fixed; right:0px; z-index: 999999; top:50%; margin-top:-80px; padding-bottom:10px; border:1px solid #999; background:#fff" id="qqck">
-    <p style=" line-height:33px; background:url(${ctx}/resources/images/qqtitlebg.jpg) repeat-x; color:#fff; padding-left:12px; margin-bottom:15px;">在线客服
+    <p style=" line-height:33px; background:url(${ctx}/resources/images/qqtitlebg.jpg) repeat-x; color:#fff; padding-left:12px; margin-bottom:15px;">在线咨询
         <a href="javascript:void(0)" style="color:#fff; float:right; margin-right:10px; text-decoration:none;" id="qqckclose">×</a>
     </p>
     <c:if test="${sch.id == 1}">
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=525118464&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线咨询：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=915209431&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线咨询：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
     </c:if>
      <c:if test="${sch.id != 1}">
     <p style=" margin:3px 0px; text-align:center;">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线客服：<img src="${ctx}/resources/images/qq_icon.gif"></a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=3187233790&site=qq&menu=yes" target="_blank" style="color:#333; font-size:12px; font-weight:bold; text-decoration:none;">在线咨询：<img src="${ctx}/resources/images/qq_icon.gif"></a>
     </p>
      </c:if>
     <p style="margin:15px 0px 0px 0px ; padding:5px; border-top:1px solid #ddd;">
-        如需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;"><c:if test="${sch.id == 1}">13880408679</c:if><c:if test="${sch.id != 1}">13550030325</c:if></span>
+        急需帮助，请拨打电话<br><span style="font-size:14px; color:#d90000; font-size:14px; font-weight:bold; line-height:28px;"><c:if test="${sch.id == 1}">13880408679</c:if><c:if test="${sch.id != 1}">18180788702</c:if></span>
     </p>
   
 </div>

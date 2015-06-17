@@ -77,7 +77,7 @@ pageEncoding="UTF-8"%>
     	<div class="col-lg-4" style="width:300px;">
         	<div class="c-index-m-f c-index-contact">
             	<p class="c-i-m-f-t">联系我们</p>
-                <div><label>热线电话：</label><span>${sch.tel}</span></div>
+                <div><label>咨询电话：</label><span>${sch.tel}</span></div>
                 <%--<div><label>传真号码：</label><span>028-12345678</span></div>--%>
                 <div><label>电子邮件：</label><span>${sch.email}</span></div>
                 <div><label>在线Q Q：</label><span>${sch.qq}</span></div>

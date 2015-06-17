@@ -53,7 +53,7 @@ $(function(){
     <p><label>性   别：</label>男：<input type="radio" name="gender" value="male" />&nbsp;&nbsp;
       女：<input type="radio" name="gender" value="female" />
     </p>
-    <p><label>出生日期：</label><input type="text" name="birthday" placeholder="yyyymmdd" class="fdfinput" /></p>
+    <p><label>出生日期：</label><input type="text" name="birthday" placeholder="yyyy-mm-dd" class="fdfinput" /></p>
     <p><label>预报专业：</label><select name="majorid" class="fdfinput" id="majorList">
 
     </select>
