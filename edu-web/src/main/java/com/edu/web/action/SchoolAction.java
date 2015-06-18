@@ -57,7 +57,7 @@ public class SchoolAction {
 
 //        model.addAttribute("sch", school);
 
-        model.addAttribute("zsjj", zsjjList != null && zsjjList.size() > 0 ? zsjjList.get(0).getContent() : null);
+        model.addAttribute("zsjj", zsjjList != null && zsjjList.size() > 0 ? zsjjList.get(0): null);
         model.addAttribute("zszsList", zszsList);
         model.addAttribute("xyfgList", xyfgList);
         model.addAttribute("xqhzList", xqhzList);
@@ -175,6 +175,7 @@ public class SchoolAction {
         School school = (School) schoolService.selectByPrimaryKey(id);
 
         model.addAttribute("content", school.getContact());
+        model.addAttribute("contact", "Y");
         setTopInfo(model, id);
         return "college-page";
     }

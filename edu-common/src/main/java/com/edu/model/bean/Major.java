@@ -19,6 +19,12 @@ public class Major extends BaseAppTO{
     private Integer readtimes;
 
     private String description;
+    
+    private String majordirect;
+    
+    private String jobdirect;
+    
+    private String salary;	
 
     public Integer getId() {
         return id;
@@ -67,4 +73,30 @@ public class Major extends BaseAppTO{
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
     }
+
+	public String getMajordirect() {
+		return majordirect;
+	}
+
+	public void setMajordirect(String majordirect) {
+		this.majordirect = majordirect;
+	}
+
+	public String getJobdirect() {
+		return jobdirect;
+	}
+
+	public void setJobdirect(String jobdirect) {
+		this.jobdirect = jobdirect;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+    
+    
 }

@@ -73,7 +73,9 @@
                                 <img src="${ctx}/resources/images/zhuanyecase.jpg" />
                                 <div class="zhuanye-words">
                                     <p class="zhuanye-title">${major.name}</p>
-                                    <p class="zhuangye-c">${major.description}</p>
+                                    <p class="zhuangye-c">专业方向:${major.majordirect}</p>
+                                     <p class="zhuangye-c">就业方向:${major.jobdirect}</p>
+                                      <p class="zhuangye-c">就业薪水:${major.salary}</p>
                                     <p class="zhuanye-info">日期：2015-06-06 06:22:21  访问次数：222</p>
                                 </div>
                             </a></li>

@@ -24,7 +24,8 @@ pageEncoding="UTF-8"%>
     <div class="c-index-main">
     	<div class="col-lg-4" style="width:355px;">
         	<div class="c-index-m-c">
-            	<p class="c-i-m-c-t"><span>学校简介</span></p>
+            	<p class="c-i-m-c-t"><span>学校简介 </span></p>
+            	<p class="c-i-m-c-t"><span> <a href="${ctx}/school/about/${sch.id}.do">更多>></a></span></p>
                 <div class="c-i-m-c-c">
                 	${sch.brief}
                 </div>
@@ -33,9 +34,10 @@ pageEncoding="UTF-8"%>
     	<div class="col-lg-4" style="width:355px;">
         	<div class="c-index-m-c">
             	<p class="c-i-m-c-t"><span>招生介绍</span></p>
+            	<p class="c-i-m-c-t"><span> <a href="${ctx}/school/newsInfo/${sch.id}/${zsjj.id}.do">更多>></a></span></p>
                 <div class="c-i-m-c-c">
                     <%--${sch.demand}--%>
-                    ${zsjj}
+                    ${zsjj.content}
                 </div>
             </div>
         </div>
